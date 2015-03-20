@@ -1,0 +1,533 @@
+/*
+Theme Name: Lydia's Place inc RV
+Author: Mikey Brandt
+Version: v1.0
+
+*/
+/**
+* Table of contents
+*  0.0 - General
+*  1.0 - Navbar / Header
+*    1.1 - Hero / page
+*  2.0 - About
+*  3.0 - 
+*  4.0 - 
+*  5.0 - 
+*  6.0 - 
+*  7.0 - 
+*  8.0 - Media queries
+*  
+*/
+
+/*  0.0 - General */
+h1, h4{
+	margin: 0;
+	padding: 0;
+	font-family: 'Ubuntu';
+	color: #F5EBD9;
+}
+h1 a{
+	color: #F5EBD9;
+}
+a{
+	color: #F5EBD9;
+}
+li:hover a{
+	color: #fff;
+	text-decoration: underline;
+}
+a:hover{
+	color: #fff;
+}
+h1 a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+h3{
+	color: #F5EBD9;
+}
+ul{
+	padding: 0;
+	margin: 0;
+}
+ul li{
+	list-style: none;
+}
+.page-wraper{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 500px;
+	background-color: #663300;
+}
+.content-wrapper{
+	width: 1020px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	/*height: 500px;*/
+	background-color: #743F0B;
+	padding: 25px;
+	min-height: 570px;
+}
+.main_content{
+	position: relative;
+	overflow: hidden;
+}
+.lyd-page{
+	width: 100%;
+	height: 845px;
+	position: relative;
+	color: #e1d4be;
+}
+.lyd-hero{
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center 69%;
+
+}
+
+/********  1.0 - Navbar / Header *************************************************/
+.admin .lyd-nav{
+	margin-top: 30px;
+}
+.lyd-nav{
+	height: 50px;
+	width: 100%;
+	background-color: #663300;
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+	color: #e1d4be;
+}
+.lyd-nav .col-md-8, 
+.lyd-nav .col-md-4{
+	margin: 0;
+	padding: 0;
+}
+.lyd-nav .col-md-4 h1{
+	padding: 1px 0 1px 5px;
+	font-family: 'Ubuntu';
+}
+.lyd-nav-container{
+	width: 1020px;
+	background-color: #663300;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+.lyd-nav ul{
+	width: 100%;
+	height: 45px;
+	padding: 0;
+	margin: 0;
+}
+.lyd-nav ul li{
+	display: inline-block;
+	list-style: none;
+	text-align: center;
+	line-height: 45px;
+	/*cursor: pointer;*/
+	font-family: 'Ubuntu';
+}
+.lyd-nav ul li a{
+	color: #e1d4be;
+}
+.lyd-nav ul li a:hover{
+	color: #fff;
+}
+
+div#container {
+	width: 103%;
+	margin: 0 -15px;
+}
+
+.rectangle {
+	background: #743F0B;
+	height: 45px;
+	width: 100%;
+	position: relative;
+	left:0;
+	top: 0;
+	float: left;
+	box-shadow: 0px 0px 4px #000;
+
+	z-index: 100; /* the stack order: foreground */
+}
+.triangle-l {
+  border-color: transparent #7d90a3 transparent transparent;
+  border-style: solid;
+  border-width: 15px;
+  height: 0;
+  left: -14px;
+  position: relative;
+  top: 31px;
+  width: 0;
+  z-index: 0;
+}
+
+.triangle-r {
+  border-color: transparent transparent transparent #7d90a3;
+  border-style: solid;
+  border-width: 15px;
+  height: 0;
+  left: 1036px;
+  position: relative;
+  top: 2px;
+  width: 0;
+  z-index: 0;
+}
+#lyd-swingdown {
+  background-color: #743F0B;
+  height: 40px;
+  left: -15px;
+  position: absolute;
+  top: 65px;
+  width: 250px;
+  z-index: 9;
+}
+
+#lyd-swingdown:before{
+	height: 50px;
+	width: 5px;
+	background-color: #743F0B;
+	content: '';
+	top: -35px;
+	position: absolute;
+	left: 20px;
+	z-index: 9;
+	/*background-color: #663300;*/
+
+}
+#lyd-swingdown:after{
+	height: 50px;
+	width: 5px;
+	background-color: #743F0B;
+	content: '';
+	top: -35px;
+	position: absolute;
+	right: 20px;
+	z-index: 9;
+	/*background-color: #663300;*/
+
+}
+#lyd-swingdown .col-md-7,
+#lyd-swingdown .col-md-5{
+	padding: 0;
+	margin: 0;
+}
+#lyd-swingdown .col-md-7 h4 {
+  line-height: 38px;
+  margin-left: 10px;
+}
+#lyd-swingdown .col-md-5 h5 {
+	margin: 0;
+	padding: 0;
+	line-height: 42px;
+}
+.reserve-btn{
+	cursor: pointer;
+}
+.reserve-btn:hover{
+	color: #fff;
+	text-decoration: none;
+}
+/********  1.1 - Hero / page *************************************************/
+
+.lyd-sidebar-wrapper{
+	height: 200px;
+	width: 200px;
+	background-color: #000;
+	color: #fff;
+}
+.lyd-content p{
+	width: 85%;
+	line-height: 25px;
+}
+.lyd-content p:first-of-type{
+	margin-top: 10px;
+}
+.lyd-content .col-md-3 h3{
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+	padding: 70px 0;
+
+}
+#lyd-featured-content{
+	height: 150px;
+	width: 100%;
+	margin-top: 50px;
+}
+#lyd-featured-content ul{
+	width: 100%;
+	height: 150px;
+	text-align: center;
+}
+#lyd-featured-content ul li{
+	list-style: none;
+	height: 100%;
+	width: 20%;
+	background-color: #fff;
+	display: inline-block;
+	text-align: center;
+	margin: 0 20px;
+	line-height: 150px;
+	color: #fff;
+	position: relative;
+	opacity: .8;
+	cursor: pointer;
+
+}
+#lyd-featured-content ul li a{
+	color: #e1d4be;
+}
+#lyd-featured-content ul li:hover{
+	opacity: 1;
+}
+#lyd-featured-content ul li a:hover{
+	color: #fff;
+}
+#lyd-featured-content ul a:nth-of-type(1)  li{
+	/*background-color: #777;*/
+	background: url('img/campsite-map.png');
+	background-size: cover;
+	background-position: center;
+
+}#lyd-featured-content ul a:nth-of-type(2) li{
+	/*background-color: #777;*/
+	background: url("img/new-york.png") repeat scroll center center / cover  rgba(0, 0, 0, 0.5);
+
+}#lyd-featured-content ul li:nth-of-type(1){
+	background: url("img/campsite-img.jpeg") repeat scroll center center / cover;
+}
+
+.border-bg{
+	background-color: rgba(33,33,33,0.8);
+	font-weight: normal;
+	padding: 10px;
+	position: relative;
+	z-index: 2;
+}
+#lyd-featured-content .glyphicon{
+	position: absolute;
+	left: 0; right: 0;
+	top: 0; bottom: 0;
+	margin: auto;
+	font-size: 135px;
+	height: 135px;
+	width: 135px;
+	z-index: 1;
+	color: #BABABA;
+}
+.lyd-content .col-md-9 ul li,
+.lyd-content .col-md-9 h5{
+	padding-left: 5px;
+}
+.lyd-content .col-md-9 div{
+	width: 50%;
+	float: left;
+}
+/********  2.0 - About ***********************************************************/
+.lyd-sidebar-wrapper > ul{
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	position: relative;
+}
+.lyd-sidebar-wrapper > ul h4{
+	padding: 0 0 5px 0;
+}
+.lyd-sidebar-wrapper > ul li{
+	padding: 0 0 5px 10px;
+
+}
+.lyd-sidebar-wrapper > ul li.reserve-btn-1{
+	position: absolute;
+	padding: 5px 10px;
+	bottom: 10px;
+	left: 10px;
+	border: 1px solid #777;
+	background: linear-gradient(to bottom, #8fcf00, #6b9c00) repeat scroll 0 0 #7db500;
+	border-radius: 20px;
+}
+.lyd-sidebar-wrapper > ul li.reserve-btn-1:hover{
+	background: linear-gradient(to bottom, #a0e800, #6b9c00) repeat scroll 0 0 #7db500;
+
+}
+.lyd-sidebar-wrapper > ul li.reserve-btn-1 > a{
+	color: #333;
+}
+
+/********  3.0 - Photos ********************************************************/
+#lyd-photos{
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+}
+#lyd-photos li{
+	height: 150px;
+	width: 200px;
+	display: inline-block;
+	margin: 10px;
+	content: ' ';
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	overflow: hidden;
+	z-index: 2;
+	cursor: pointer;
+
+}
+.pg-txt{
+	height: 150px;
+	width: 200px;
+	line-height: 150px;
+	background-color: rgba(19,19,19,0.5);
+	position: absolute;
+	z-index: 1;
+	left: -200px;
+	-webkit-transition: left .5s;
+	transition: left .5s;
+}
+#lyd-photos li:hover .pg-txt{
+	left: 0;
+}
+.lyd-modal-img{
+	height: 500px;
+	width: 100%;
+	content: ' ';
+	background-size: cover;
+	background-position: center;
+}
+/********  4.0 -  **********************************************************/
+
+/********  5.0 - **********************************************************/
+
+.wpcf7 button,
+.wpcf7 input,
+.wpcf7 textarea {
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 4px;
+	display: block;
+	line-height: 18px;
+	margin: 0 0 18px;
+	padding: 8px 8px 7px;
+	width: 50%;
+	margin: 0 auto;
+	-webkit-transition: all .25s;
+	transition: all .25s;
+}
+.wpcf7 p{
+	text-align: center;
+	font-family: 'Open Sans';
+}
+.wpcf7 p img{
+	margin: 0 0 15px 0;
+}
+.wpcf7 button {
+	background: #2a2a2b;
+	border-color: #242425;
+	color: #ddd;
+}
+
+.wpcf7 button:active,
+.wpcf7 button:focus,
+.wpcf7 button:hover {
+	/*background-color: #272728;*/
+	border-color: #fff;
+	color: #fff;
+	outline: none;
+}
+
+.wpcf7 input,
+.wpcf7 textarea {
+	background: #454545;
+	border-color: #9f9f9f;
+	color: #fff;
+}
+
+.wpcf7 textarea {
+	padding-bottom: 8px;
+	width: 50%;
+	resize: none;
+}
+
+.wpcf7 input:active,
+.wpcf7 input:focus,
+.wpcf7 input:hover,
+.wpcf7 textarea:active,
+.wpcf7 textarea:focus,
+.wpcf7 textarea:hover {
+	/*background: #5e6163;*/
+	border-color: #fff;
+	outline: none;
+}
+form p input.wpcf7-submit{
+	background-color: #333;
+}
+form p input.wpcf7-submit:hover{
+	background-color: #777;
+}
+
+::-webkit-input-placeholder {
+	color: #ddd;
+	line-height: normal;
+}
+
+:-moz-placeholder {
+	color: #ddd;
+}
+
+::-moz-placeholder {
+	color: #ddd;
+}
+
+:-ms-input-placeholder {
+	color: #ddd;
+}
+/********  6.0 -  **********************************************************/
+
+/********  7.0 - Footer ******************************************************/
+footer{
+	background-color: #553300;
+	height: 50px;
+}
+footer h4{
+	width: 100%;
+	text-align: center;
+	line-height: 50px;
+}
+footer h4 a{
+	text-transform: capitalize;
+	color: #eee;
+}
+footer h4 a:hover{
+	color: #fff;
+}
+/********  8.0 - Media queries******************************************************/
+
+/***********************CSS Ribbon********************************/
+ .corner-ribbon{
+	width: 300px;
+	background: #e43;
+	position: absolute;
+	text-align: center;
+	line-height: 50px;
+	letter-spacing: 1px;
+	color: #f0f0f0;
+	z-index: 9;
+	top: 60px;
+	right: -70px;
+	left: auto;
+	font-family: 'Ubuntu';
+	font-size: 16px;
+	text-transform: uppercase;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	z-index: 9999;
+}
