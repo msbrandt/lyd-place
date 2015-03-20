@@ -63,6 +63,22 @@ function create_section_bottom($the_page){
 function lyd_photo_gallery(){
 
        $photos = lyd_get_photos();
+       // $photo_count = echo count($photos); 
+       // $size_classes = array(
+       // 		'ani-left',
+       // 		'ani-top',
+       // 		'ani-right'
+       // 	);
+
+       //  switch ($photo_count) {
+       //    	case $photo_count % 3 === 0:
+          		
+       //    		break;
+          	
+       //    	default:
+       //    		# code...
+       //    		break;
+       //    }
        ?>
 <h1>PHOTO GALARRY</h1>
 
@@ -73,6 +89,9 @@ function lyd_photo_gallery(){
               $the_id = $pp->ID;
               $title = $pp->post_title;
               $src = wp_get_attachment_image_src( get_post_thumbnail_id( $the_id ), 'single-post-thumbnail' );;
+
+
+
 
               ?>
               <li data-toggle="modal" data-target="#myModal-<?php echo $the_id; ?>" class="lyd-photo" id="photo-<?php echo $the_id; ?>"style="background-image: url('<?php echo $src[0]; ?>')">
