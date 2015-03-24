@@ -1,5 +1,5 @@
 /*
-Theme Name: Lydia's Place inc RV
+Theme Name: Lydia's Place inc RV-use
 Author: Mikey Brandt
 Version: v1.0
 
@@ -10,9 +10,9 @@ Version: v1.0
 *  1.0 - Navbar / Header
 *    1.1 - Hero / page
 *  2.0 - About
-*  3.0 - 
-*  4.0 - 
-*  5.0 - 
+*  3.0 - Campsite 
+*  4.0 - Photos
+*  5.0 - Getting Here
 *  6.0 - 
 *  7.0 - 
 *  8.0 - Media queries
@@ -54,23 +54,25 @@ ul li{
 	list-style: none;
 }
 .page-wraper{
-	position: absolute;
-	bottom: 0;
 	width: 100%;
-	height: 500px;
+	min-height: 400px;
+	/*max-height: 100%;*/
+	position: relative;
+	margin-top: 350px;
 	background-color: #663300;
 }
 .content-wrapper{
 	width: 1020px;
-	position: absolute;
+	position: relative;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	margin: auto;
+	top: -100px;
+	margin: 0 auto -100px auto;
 	/*height: 500px;*/
 	background-color: #743F0B;
-	padding: 25px;
-	min-height: 570px;
+	padding: 25px 25px 100px 25px;
+	/*min-height: 570px;*/
 }
 .main_content{
 	position: relative;
@@ -78,7 +80,6 @@ ul li{
 }
 .lyd-page{
 	width: 100%;
-	height: 845px;
 	position: relative;
 	color: #e1d4be;
 }
@@ -86,7 +87,9 @@ ul li{
 	width: 100%;
 	height: 100%;
 	background-size: cover;
-	background-position: center 69%;
+	background-position: center;
+	position: fixed;
+	top: -10px;
 
 }
 
@@ -102,6 +105,7 @@ ul li{
 	padding: 0;
 	border-radius: 0;
 	color: #e1d4be;
+	z-index: 9;
 }
 .lyd-nav .col-md-8, 
 .lyd-nav .col-md-4{
@@ -361,12 +365,139 @@ div#container {
 .lyd-sidebar-wrapper > ul li.reserve-btn-1 > a{
 	color: #333;
 }
+/********  3.0 - Campsite ********************************************************/
 
-/********  3.0 - Photos ********************************************************/
+.campsite{
+	font-family: 'Ubuntu';
+	font-size: 20px;
+	cursor: pointer;
+	transition: all .15s;
+}
+.campsite:hover{
+	fill: #fff;
+	text-decoration: underline;
+}
+.camp-available{
+	fill: #0f0;
+}
+.camp-booked{
+	fill: #f00;
+}
+.camp-waiting{
+	fill: #FF8E00;
+}
+
+.campsite-input{
+	display: table;
+	width: 45%;
+	margin-bottom: 5px;
+}
+.input-prepend{
+	/*display: table;*/
+	float: left;
+	width: 60px;
+	background-color: #0f0;
+	color: #000;
+	text-align: right;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px 0 0 5px;
+	padding: 8px 0;
+	-webkit-transition: all .25s;
+	transition: all .25s;
+}
+.campsite-input#camp-from,
+.campsite-input#camp-to{
+	width: 17.75%;
+	display: inline-block;
+	float: left;
+}
+.clear{
+	clear: both;
+}
+
+#campsite-book input,
+#campsite-book select {
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0 5px 5px 0;
+	/*display: block;*/
+	/*line-height: 18px;*/
+	/*margin: 0 0 18px;*/
+	padding: 8px 8px 7px;
+	/*width: 50%;*/
+	/*margin: 0 auto;*/
+	-webkit-transition: all .25s;
+	transition: all .25s;
+}
+
+#campsite-book input,
+#campsite-book select{
+	background: #454545;
+	border-color: #9f9f9f;
+	color: #fff;
+}
+
+#campsite-book input:active,
+#campsite-book input:focus,
+#campsite-book input:hover {
+	/*background: #5e6163;*/
+	border-color: #fff;
+	outline: none;
+}
+
+::-webkit-input-placeholder {
+	color: #ddd;
+	line-height: normal;
+}
+
+:-moz-placeholder {
+	color: #ddd;
+}
+
+::-moz-placeholder {
+	color: #ddd;
+}
+
+:-ms-input-placeholder {
+	color: #ddd;
+}
+
+.reserve-btn-2{
+	padding: 5px 10px;
+	background: linear-gradient(to bottom, #8fcf00, #6b9c00) repeat scroll 0 0 #7db500;
+	border-radius: 20px;
+	width: 30%;
+	margin-left: 15%;
+	cursor: pointer;
+	text-align: center;
+	-webkit-transition: all .5s;
+
+	transition: all .5s;
+
+	
+
+
+}
+.reserve-btn-2:hover{
+	background: linear-gradient(to bottom, #a0e800, #6b9c00) repeat scroll 0 0 #7db500;
+
+}
+.response{
+	width: 100%;
+	height: 300px;
+	background-color: #0ff;
+	content: ' ';
+}
+/********  4.0 - Photos ********************************************************/
 #lyd-photos{
 	width: 100%;
-	padding: 20px;
+	/*padding: 20px;*/
+	padding-top: 10px;
 	text-align: center;
+}
+#lyd-photos.row{
+	margin: 0;
 }
 #lyd-photos li{
 	height: 200px;
@@ -428,10 +559,16 @@ div#container {
 	content: ' ';
 	background-size: cover;
 	background-position: center;
-}
-/********  4.0 -  **********************************************************/
 
-/********  5.0 - **********************************************************/
+}
+/********  6.0 - Getting Here **********************************************************/
+.google-map{
+	height: 400px;
+	width: 100% !important;
+	background-color: #0f0;
+	margin: 0 auto;
+}
+/********  6.0 - **********************************************************/
 
 .wpcf7 button,
 .wpcf7 input,
@@ -522,6 +659,7 @@ form p input.wpcf7-submit:hover{
 footer{
 	background-color: #553300;
 	height: 50px;
+	position: relative;
 }
 footer h4{
 	width: 100%;

@@ -1,0 +1,55 @@
+.content-row{
+	width: 90%;
+	height: 400px;
+	background-color: #0f0;
+	border-bottom: 1px solid #333;
+	padding: 10px;
+}
+.content-wrapper{
+	width: 33%;
+	height: 100%;
+	background-color: #0ff;
+	display: inline-block;
+}
+h3.ad-h1{
+	padding: 0;
+	margin: 0 0 5px 5px;
+	width: 100%;
+	background-color: #333;
+	color: #0ff;
+}
+#campsite-status{
+	width: 100%;
+	border: 1px solid #B0B0B0;	
+}
+#campsite-status tbody{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;	
+}
+#campsite-status thead{
+	text-align: left;
+}
+#campsite-status thead th{
+	background: -moz-linear-gradient(top, #F0F0F0 0, #DBDBDB 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F0F0F0), color-stop(100%, #DBDBDB));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F0F0F0', endColorstr='#DBDBDB', GradientType=0);
+	border: 1px solid #B0B0B0;
+	color: #444;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 3px 10px;
+}
+#campsite-status td{
+	padding: 3px 10px;
+}
+#campsite-status tr:nth-child(even) {
+	background: #F2F2F2;
+}
+#campsite-status tr:nth-child(odd) {
+	background-color: #999797;
+}

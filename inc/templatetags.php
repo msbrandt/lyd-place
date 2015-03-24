@@ -43,19 +43,18 @@ function create_section_top($the_page, $is_page){
 
    <section id="lyd-<?php echo (string)$the_page; ?>" class="lyd-page" >
 
-          <div class="lyd-hero" id="lyd-hero-<?php echo (string)$the_page; ?>" style="background-image: url('<?php echo $featured_img; ?>'">
+          <div class="lyd-hero" id="lyd-hero-<?php echo (string)$the_page; ?>" style="<?php echo $featured_img; ?>"></div>
                 <div class="page-wraper">
                         <div class="content-wrapper">
                                <div class="lyd-content row" id="home-content">	
 <?php 
 }
 
-function create_section_bottom($the_page){
+function create_section_bottom(){
 ?>
                                </div>
                         </div>
                  </div>
-          </div>
    </section>
 <?php
 	get_footer(); 
@@ -88,7 +87,7 @@ function lyd_photo_gallery(){
               $pp = json_decode($val);
               $the_id = $pp->ID;
               $title = $pp->post_title;
-              $src = wp_get_attachment_image_src( get_post_thumbnail_id( $the_id ), 'single-post-thumbnail' );;
+              $src = wp_get_attachment_image_src( get_post_thumbnail_id( $the_id ), 'full' );;
 
 
 
@@ -117,4 +116,7 @@ function lyd_photo_gallery(){
 
 
 }
+
+
+
 ?>

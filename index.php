@@ -33,4 +33,4 @@
        
 
  
-<?php create_section_bottom('Home'); ?>
+<?php create_section_bottom(); ?>

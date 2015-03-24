@@ -4,4 +4,4 @@
        lyd_photo_gallery();
        // echo $about_post;
  ?> 
-<?php create_section_bottom('About'); ?>
+<?php create_section_bottom(); ?>

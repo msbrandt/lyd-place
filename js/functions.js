@@ -1,46 +1,122 @@
 jQuery(function($){
     var hi = $(window).height();
-    
-    hero_resize(hi)
-    // $(document).on('load', sidebar_fix());
-    $(window).resize( function(){
-      var h = $(window).height();
-      hero_resize(h);
-    });
-    function sidebar_fix(){
-      if($('.lyd-sidebar-wrapper ul').length > 0){
-        var li;
-        var sidebar = $('.lyd-sidebar-wrapper ul');
-        var items_raw = $('.lyd-sidebar-wrapper ul div').html(),
-          items = items_raw;
-        $('.lyd-sidebar-wrapper ul div').remove();
-        items = items.split(',');
-        console.log(items.length);
-        items.forEach(function(item){
-          if(item.indexOf('+') == -1){
-            li = '<li>'+item+'</li>';
-            sidebar.append(li);
+    // if($('#lyd-Photos').length > 0){
+    //   var page_wrapper = $('.page-wraper');
+    //   var photos = $('#lyd-photos > li');
+    //   var old_height = parseInt(photos.height());
+    //   var new_height = 0;
+    //   var x = 0;
+    //   for(var i = 0; i < photos.length; i++){
+    //     if(i % 3 === 0){
+    //       new_height += old_height;
+    //       // console.log(new_height);
+    //     }
+    //   }
 
-          }else{
-            var btn = item.split('+');
-            console.log(btn);
-            li = '<li>'+btn[0]+'</li>';
-            btn = '<li class="reserve-btn-1"><a href="#">'+btn[1]+'</a></li>';
-            sidebar.append(li);
-            sidebar.append(btn);
+    //   // while(x < photos.length){
+    //   //   x++;
+    //   //   if(x % 3 === 0){
+    //   //     console.log(x);
+    //   //   }
+    //   // }
+    //   page_wrapper.height(new_height + 50);
+    // }
+
+    if($('#campsite-book').length > 0){
+      var res_btn = $('.reserve-btn-2');
+      var form_input = [];
+      var range = [];
+      var add_inputs = true,
+          getting_range = false;
+      res_btn.on('click', function(){
+        var inputs = $('.campsite-input');
+
+        for (var i = 0; i < inputs.length; i++) {
+            var input_val = $(inputs[i]).val();
+            var key = $(inputs[i]).data('key');
+            // if(key.indexOf('from') != -1 || key.indexOf('to') != -1){
+              if(key.indexOf('from') != -1){
+                range.push(new Date(input_val));
+                form_input.push(key+':'+( new Date(input_val).toISOString()));
+                getting_range = true;
+              }else if(key.indexOf('to') != -1){
+                form_input.push(key+':'+( new Date(input_val).toISOString()));
+
+                range.push(new Date(input_val));
+                add_inputs = false;
+              }
+            // }
+          if(add_inputs && !getting_range){
+            form_input.push(key+':'+input_val);
+          }else if(!add_inputs && getting_range){
+            var the_range = date_range(range[0], range[1]);
+            form_input.push('range:'+the_range);
+            add_inputs = true;
+            getting_range = false;
           }
-        })
-      }
-    }
-    function hero_resize(s_height){
-      if(s_height< 585){
-        $('.lyd-hero').css('background-position', 'center 80%');
-      }else{
-        $('.lyd-hero').css('background-position', 'center 69%');
+          
+        };
+        save_booking_info();
+        console.log(form_input);
+      }); //end of reserve on click function
 
+     $('#camp-from').datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberofMonths: 2,
+        // dateFormat: 'yy-mm-dd',
+        onClose: function(selectedDate){
+          $('#camp-to').datepicker("option", "minDate", selectedDate);
+        }
+    });
+    $('#camp-to').datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberofMonths: 2,
+      // dateFormat: 'yy-mm-dd',
+      onClose: function(selectedDate){
+        $('#camp-to').datepicker("option", "maxDate", selectedDate);
       }
+    });
+
+
 
     }
+  function save_booking_info(){
+    var form_inputs = JSON.stringify(form_input);
+
+   $.ajax({
+        url: lyd.ajaxurl,
+        type: 'POST',
+        data: {
+          action: 'save_booking_info',
+          form_inputs: form_inputs
+      },
+      //on sucess, add player to table and give the user a response
+      success: function(response){
+        // console.log(response);
+        $('.response').html(response);
+      }
+    });
+
+  }
+  function date_range(start, end){
+    var date_array = [];
+    var current_date = start;
+    var next_date = new Date();
+    next_date.setDate(start.getDate() + 10);
+
+    while (current_date < end){
+      var date_time = new Date(current_date).toISOString(),
+      date_time = date_time.split('T'),
+      date = date_time[0];
+      date_array.push(date);
+      current_date = new Date(current_date.setDate(current_date.getDate() + 1));
+    }
+
+    var da = JSON.stringify(date_array);
+    return da;
+}
 
   // var windowH = $(window).height(); 
   // var homeArrow = $('#scroll-down');
