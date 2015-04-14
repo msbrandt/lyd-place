@@ -1,5 +1,63 @@
 jQuery(function($){
-    var hi = $(window).height();
+    var h = $(window).height(),
+        w = $(window).width();
+   var page = window.location.href;
+   if(page.indexOf('#') > -1){
+    console.log(page);
+   }else{
+    console.log(page);
+
+   }
+   var bh = h - 50,
+       bw = w - 50;
+
+    $('.main_content').height(h);
+
+    $('.lyd-page').height(h);
+    $('.lyd-nav').height(h);
+    $('.hero-border').height(bh);
+    $('.hero-border').width(bw);
+
+    $('.navbar-toggle').on('click', function(){
+      var nav = $('.lyd-nav');
+      nav.css('left', '0');
+      $(this).hide(500);
+
+      // nav.show();
+    });
+    $('.close-nav').on('click', function(){
+      // $('.lyd-nav').hide();
+      var nav = $('.lyd-nav');
+
+      nav.css('left', '-20%');
+
+      $('.navbar-toggle').show(500);
+    });
+
+    // function initialize() {
+      if($('main#getting-here-and-around').length > 0){
+      console.log('this works');
+
+        var mapOptions = {
+          center: new google.maps.LatLng(44.675410, -74.690689),
+          zoom: 12
+        };
+        var map = new google.maps.Map(document.getElementById('lyd-map'),
+            mapOptions);
+      }
+
+    $('#book-now').on('click', function(e){
+        var target = $(this).children();
+        
+        if( target.length ) {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: target.offset().top + 250
+            }, 1000);
+        }
+    });
+    // }
+    // google.maps.event.addDomListener(window, 'load', initialize);
     // if($('#lyd-Photos').length > 0){
     //   var page_wrapper = $('.page-wraper');
     //   var photos = $('#lyd-photos > li');
@@ -22,101 +80,101 @@ jQuery(function($){
     //   page_wrapper.height(new_height + 50);
     // }
 
-    if($('#campsite-book').length > 0){
-      var res_btn = $('.reserve-btn-2');
-      var form_input = [];
-      var range = [];
-      var add_inputs = true,
-          getting_range = false;
-      res_btn.on('click', function(){
-        var inputs = $('.campsite-input');
+//     if($('#campsite-book').length > 0){
+//       var res_btn = $('.reserve-btn-2');
+//       var form_input = [];
+//       var range = [];
+//       var add_inputs = true,
+//           getting_range = false;
+//       res_btn.on('click', function(){
+//         var inputs = $('.campsite-input');
 
-        for (var i = 0; i < inputs.length; i++) {
-            var input_val = $(inputs[i]).val();
-            var key = $(inputs[i]).data('key');
-            // if(key.indexOf('from') != -1 || key.indexOf('to') != -1){
-              if(key.indexOf('from') != -1){
-                range.push(new Date(input_val));
-                form_input.push(key+':'+( new Date(input_val).toISOString()));
-                getting_range = true;
-              }else if(key.indexOf('to') != -1){
-                form_input.push(key+':'+( new Date(input_val).toISOString()));
+//         for (var i = 0; i < inputs.length; i++) {
+//             var input_val = $(inputs[i]).val();
+//             var key = $(inputs[i]).data('key');
+//             // if(key.indexOf('from') != -1 || key.indexOf('to') != -1){
+//               if(key.indexOf('from') != -1){
+//                 range.push(new Date(input_val));
+//                 form_input.push(key+':'+( new Date(input_val).toISOString()));
+//                 getting_range = true;
+//               }else if(key.indexOf('to') != -1){
+//                 form_input.push(key+':'+( new Date(input_val).toISOString()));
 
-                range.push(new Date(input_val));
-                add_inputs = false;
-              }
-            // }
-          if(add_inputs && !getting_range){
-            form_input.push(key+':'+input_val);
-          }else if(!add_inputs && getting_range){
-            var the_range = date_range(range[0], range[1]);
-            form_input.push('range:'+the_range);
-            add_inputs = true;
-            getting_range = false;
-          }
+//                 range.push(new Date(input_val));
+//                 add_inputs = false;
+//               }
+//             // }
+//           if(add_inputs && !getting_range){
+//             form_input.push(key+':'+input_val);
+//           }else if(!add_inputs && getting_range){
+//             var the_range = date_range(range[0], range[1]);
+//             form_input.push('range:'+the_range);
+//             add_inputs = true;
+//             getting_range = false;
+//           }
           
-        };
-        save_booking_info();
-        console.log(form_input);
-      }); //end of reserve on click function
+//         };
+//         save_booking_info();
+//         console.log(form_input);
+//       }); //end of reserve on click function
 
-     $('#camp-from').datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-        numberofMonths: 2,
-        // dateFormat: 'yy-mm-dd',
-        onClose: function(selectedDate){
-          $('#camp-to').datepicker("option", "minDate", selectedDate);
-        }
-    });
-    $('#camp-to').datepicker({
-      defaultDate: "+1w",
-      changeMonth: true,
-      numberofMonths: 2,
-      // dateFormat: 'yy-mm-dd',
-      onClose: function(selectedDate){
-        $('#camp-to').datepicker("option", "maxDate", selectedDate);
-      }
-    });
+//      $('#camp-from').datepicker({
+//         defaultDate: "+1w",
+//         changeMonth: true,
+//         numberofMonths: 2,
+//         // dateFormat: 'yy-mm-dd',
+//         onClose: function(selectedDate){
+//           $('#camp-to').datepicker("option", "minDate", selectedDate);
+//         }
+//     });
+//     $('#camp-to').datepicker({
+//       defaultDate: "+1w",
+//       changeMonth: true,
+//       numberofMonths: 2,
+//       // dateFormat: 'yy-mm-dd',
+//       onClose: function(selectedDate){
+//         $('#camp-to').datepicker("option", "maxDate", selectedDate);
+//       }
+//     });
 
 
 
-    }
-  function save_booking_info(){
-    var form_inputs = JSON.stringify(form_input);
+//     }
+//   function save_booking_info(){
+//     var form_inputs = JSON.stringify(form_input);
 
-   $.ajax({
-        url: lyd.ajaxurl,
-        type: 'POST',
-        data: {
-          action: 'save_booking_info',
-          form_inputs: form_inputs
-      },
-      //on sucess, add player to table and give the user a response
-      success: function(response){
-        // console.log(response);
-        $('.response').html(response);
-      }
-    });
+//    $.ajax({
+//         url: lyd.ajaxurl,
+//         type: 'POST',
+//         data: {
+//           action: 'save_booking_info',
+//           form_inputs: form_inputs
+//       },
+//       //on sucess, add player to table and give the user a response
+//       success: function(response){
+//         // console.log(response);
+//         $('.response').html(response);
+//       }
+//     });
 
-  }
-  function date_range(start, end){
-    var date_array = [];
-    var current_date = start;
-    var next_date = new Date();
-    next_date.setDate(start.getDate() + 10);
+//   }
+//   function date_range(start, end){
+//     var date_array = [];
+//     var current_date = start;
+//     var next_date = new Date();
+//     next_date.setDate(start.getDate() + 10);
 
-    while (current_date < end){
-      var date_time = new Date(current_date).toISOString(),
-      date_time = date_time.split('T'),
-      date = date_time[0];
-      date_array.push(date);
-      current_date = new Date(current_date.setDate(current_date.getDate() + 1));
-    }
+//     while (current_date < end){
+//       var date_time = new Date(current_date).toISOString(),
+//       date_time = date_time.split('T'),
+//       date = date_time[0];
+//       date_array.push(date);
+//       current_date = new Date(current_date.setDate(current_date.getDate() + 1));
+//     }
 
-    var da = JSON.stringify(date_array);
-    return da;
-}
+//     var da = JSON.stringify(date_array);
+//     return da;
+// }
 
   // var windowH = $(window).height(); 
   // var homeArrow = $('#scroll-down');

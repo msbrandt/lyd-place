@@ -2,8 +2,8 @@
 
 </main>
 
-<footer id="footer">
-	<h4> Designed and Developed by <a target="_blank" href="http://michaelbrandt.info">mikey brandt</a></h4>
+<footer id="footer" class="row">
+	<?php real_footer_nav(); ?>
 </footer>
 
 

@@ -1,15 +1,14 @@
 <?php
- // Template Name: lyd-about
-create_hero_reg('Learn More');
-
-
+ // Template Name: lyd-contact1
+create_hero_reg('Contact');
 ?>
+
 </section>
 <section id="about-page-content">
 	<div id="page-container">
 		<div id="page-content">
 <?php 
-$the_cat_id = get_cat_ID('About');
+$the_cat_id = get_cat_ID('Contact');
 $cat_args = array(
 		'cat' => (int)$the_cat_id,
 		'post_type' => 'post'

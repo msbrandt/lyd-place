@@ -1,64 +1,78 @@
 <?php
 function lyd_header(){
 	?>
-       <header>
-              <nav class="navbar lyd-nav" role="navigation">
+  <header>
+      <button type="button" class="navbar-toggle collapsed" >
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <nav class="lyd-nav">
+      <span class="close-nav">x</span>
+      <h2><a href="<?php echo get_home_url(); ?>">Lydia's Place Inc</a></h2>
 
-                     <div class="lyd-nav-container row">
+      <?php lyd_nav(); ?>
 
-												<div id="container"> <!-- Main Container -->    
+    </nav>
 
-							<div class="rectangle">
-		                     	<div class="col-md-4">
-		                     		<h1><a href="<?php echo get_home_url(); ?>">Lydia's Place</a></h1>
-		                     	</div>
-		                     	<div class="col-md-8">
-		                            <?php lyd_nav(); ?> 
-								</div> <!-- Rectangle with a title -->
-							</div>
-						</div>
-		                <div id="lyd-swingdown" class="row">
-							<div class="col-md-7">
-		                		<h4>R/V Campsite</h4>
-							</div>
-		                	<div class="col-md-5">
-		                		<h5 class="reserve-btn"><a href="<?php echo get_permalink(get_page_by_path('Campsite') ); ?>">Reserve Now</a></h5>
-		                	</div>	
-		                </div>
-                     </div>
-              </nav>
+  </header>
 
-
-
-       </header>
-              <div class="my-nav-temp"></div>
 
 	<?php
 }
-function create_section_top($the_page, $is_page){
-	get_header();
-	$featured_img = lyd_get_featured_img($the_page, $is_page);
-	?>
-   <div class="corner-ribbon">Full site coming soon!</div>
+function create_hero($the_page){
+  get_header();
+  $featured_img = lyd_get_featured_img($the_page);
+  $the_post = lyd_get_post($the_page, false, 'post');
 
-   <section id="lyd-<?php echo (string)$the_page; ?>" class="lyd-page" >
-
-          <div class="lyd-hero" id="lyd-hero-<?php echo (string)$the_page; ?>" style="<?php echo $featured_img; ?>"></div>
-                <div class="page-wraper">
-                        <div class="content-wrapper">
-                               <div class="lyd-content row" id="home-content">	
-<?php 
-}
-
-function create_section_bottom(){
-?>
-                               </div>
-                        </div>
-                 </div>
+  ?>
+   <section id="lyd-<?php echo (string)$the_page; ?>" class="lyd-page" style="<?php echo $featured_img; ?>" >
+      <div class="content-wrapper">
+        <div class="page-padding">
+          <h1><?php echo $the_post->post_title; ?></h1>
+          <?php lyd_get_content($the_page); ?>
+          <?php if($the_page == "Home"): ?>
+          <div class="lyd-btn" id="book-now"><a href="#reserve-now">book now</a></div>
+          <div class="lyd-btn" id="lean-more"><a href="<?php echo get_permalink( get_page_by_path( 'Learn More' ) ); ?>">learn more</a></div>
+          <?php endif; ?>
+        </div>
+      </div>  
+      <div class="hero-border"></div>
    </section>
+
 <?php
-	get_footer(); 
+
 }
+function create_hero_reg($the_page){
+  get_header();
+  // echo $the_page;
+  $featured_img = lyd_get_featured_img($the_page);
+  $the_post = lyd_get_post($the_page, false, 'post');
+  $the_id="";
+  $x = preg_match('/\s/', $the_page);
+  if($x){
+    $raw_id = explode(" ", strtolower($the_page));
+    $last_str = end($raw_id);
+
+    foreach ($raw_id as $id) {
+      if($id != $last_str){
+        $the_id = $the_id . $id.'-';
+      }else{
+        $the_id = $the_id . $id;
+      }
+    }
+  }else{
+    $the_id = $the_page;
+  }
+
+?>
+   <section id="lyd-<?php echo (string)$the_id; ?>" class="lyd-page-reg" style="<?php echo $featured_img; ?>" >
+          <div class="page-title-container">
+            <h1><?php echo $the_page; ?></h1>
+          </div>
+<?php  
+}
+
 function lyd_photo_gallery(){
 
        $photos = lyd_get_photos();
@@ -81,7 +95,7 @@ function lyd_photo_gallery(){
        ?>
 <h1>PHOTO GALARRY</h1>
 
-       <ul id="lyd-photos" class="row">
+       <ul id="lyd-photos">
        <?php
        foreach ($photos as $key => $val) {
               $pp = json_decode($val);
@@ -93,8 +107,10 @@ function lyd_photo_gallery(){
 
 
               ?>
-              <li data-toggle="modal" data-target="#myModal-<?php echo $the_id; ?>" class="lyd-photo" id="photo-<?php echo $the_id; ?>"style="background-image: url('<?php echo $src[0]; ?>')">
-              		<div class="pg-txt"><?php echo $title; ?></div>
+              <li data-toggle="modal" data-target="#myModal-<?php echo $the_id; ?>" class="lyd-photo" id="photo-<?php echo $the_id; ?>">
+              		<div class="picture-padding" style="background-image: url('<?php echo $src[0]; ?>')">
+                    <div class="pg-txt"><?php echo $title; ?></div>
+                  </div>
               </li>  
 			  <!-- Modal -->
 			<div class="modal fade" id="myModal-<?php echo $the_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -116,7 +132,46 @@ function lyd_photo_gallery(){
 
 
 }
+function footer_navbar($the_page){
+  ?>
+  <div class="row footer-nav">
+  <a class="footer-nav-bo col-md-4" href="<?php echo get_permalink( get_page_by_path( 'Learn More' ) ); ?>" >
+    <div class="nav-bg-img" id="nav-about"></div>
+    <div class="footer-nav-container">
+      Learn More 
+    </div>
+  </a>
+  <a class="footer-nav-bo col-md-4" href="<?php echo get_permalink( get_page_by_path( 'Getting here and around' ) ); ?>">
+    <div class="nav-bg-img" id="nav-gh"></div>
+    <div class="footer-nav-container">
+      Getting here and around
+    </div>
+  </a>
+  <a class="footer-nav-bo col-md-4" href="<?php echo get_permalink( get_page_by_path( 'Contact' ) ); ?>">
+    <div class="nav-bg-img" id="nav-contact"></div>
+    <div class="footer-nav-container">
+      contact us
+    </div>
+  </a>
 
+  </div>
+
+<?php
+  get_footer(); 
+
+}
+function real_footer_nav(){
+  ?>
+  <div class="col-md-6">
+    <h5>Lydia's Place inc</h5>
+    <?php wp_nav_menu();?>
+  </div>
+  <div class="col-md-6">
+    <h4> Designed and Developed by <a target="_blank" href="http://michaelbrandt.info">mikey brandt</a></h4>
+  </div>
+
+  <?php 
+}
 
 
 ?>

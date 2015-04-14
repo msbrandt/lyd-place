@@ -32,5 +32,26 @@
 
 	<!-- <div class="clear"></div> -->
 <div class="main_content">
-	<main>
+	<?php 
+	$this_name = get_the_title(); 
+  	$the_id="";
+
+	 $x = preg_match('/\s/', $this_name);
+	  if($x){
+	    $raw_id = explode(" ", strtolower($this_name));
+	    $last_str = end($raw_id);
+
+	    foreach ($raw_id as $id) {
+	      if($id != $last_str){
+	        $the_id = $the_id . $id.'-';
+	      }else{
+	        $the_id = $the_id . $id;
+	      }
+	    }
+	  }else{
+	    $the_id = $this_name;
+	  }
+
+	 ?>
+	<main id="<?php echo $the_id; ?>">
 		<?php lyd_header(); ?>

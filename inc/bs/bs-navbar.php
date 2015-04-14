@@ -20,6 +20,7 @@ class BS_Walker_Nav_Menu extends Walker_Nav_Menu {
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
 		$output .= "\n$indent<ul class=\"myTHeme-nav\" role=\"menu\">\n";
+
 	}
 	/**
 	* Ends the list of after the elements are added.
@@ -59,12 +60,28 @@ class BS_Walker_Nav_Menu extends Walker_Nav_Menu {
 		if ( $item->current || $item->current_item_ancestor || $item->current_item_parent ) {
 			$classes[] = 'active';
 		}
+		$x = preg_match('/\s/', $item->title);
+		  if($x){
+		    $raw_id = explode(" ", strtolower($item->title));
+		    $last_str = end($raw_id);
+
+		    foreach ($raw_id as $id) {
+		      if($id != $last_str){
+		        $the_id = $the_id . $id.'-';
+		      }else{
+		        $the_id = $the_id . $id;
+		      }
+		    }
+		  }else{
+		    $the_id = $item->title;
+		  }
 		$page_link = get_permalink(get_page_by_path($item->title) );
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 		$id = apply_filters( 'nav_item_id', 'menu-item-' . $item->title, $item, $args );
-		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
-		$output .= $indent . '<li class="col-md-2"' . $id . '>';
+		// echo $item->title . '<br />';
+		$id = $id ? ' id="' . esc_attr( $the_id ) . '"' : '';
+		$output .= $indent . '<li' . $id . '>';
 		$atts['title'] = ! empty( $item->attr_title ) ? $item->attr_title : '';
 		$atts['target'] = ! empty( $item->target ) ? $item->target : '';
 		$atts['rel'] = ! empty( $item->xfn ) ? $item->xfn : '';
@@ -73,6 +90,8 @@ class BS_Walker_Nav_Menu extends Walker_Nav_Menu {
 		$attributes = '';
 		$this_link = strtolower( $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after);
 		$item_output = $args->before;
+		// if(get_permalink( get_page_by_path(  $item->title  ) ))
+		echo get_permalink( get_page_by_path(  $item->title  ) ) . ' - '.$item->title.'<br />';
 		$item_output .= '<a href="'.get_permalink( get_page_by_path(  $item->title  ) ).'" class="my-nav-button">';
 		/** This filter is documented in wp-includes/post-template.php */
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
@@ -152,23 +171,7 @@ function bs_navbar( $args, $search = false ) {
 		'theme_location' => ''
 	);
 	$args = wp_parse_args( $args, $defaults );
-	?>
-	<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#<?php echo $args['theme_location']; ?>">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
-		
-		<?php if ( get_header_image() ) : ?>
-		<a class="navbar-img" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<img src="<?php header_image() ?>" alt="Lydia's place inc RV">
-			<span class="navbar-txt"<?php echo sprintf( ' style="color:#%s;"', get_header_textcolor() ); ?>><?php bloginfo( 'name' ); ?></span>
-		</a>
-		<?php endif; ?>
-	</div>
-	<?php
+
 	wp_nav_menu( $args );
 }
 ?>

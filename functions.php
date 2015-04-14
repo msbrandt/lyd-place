@@ -55,8 +55,11 @@ function lyd_scripts() {
 
 	// Load main stylesheet.
 	wp_enqueue_style( 'lyd-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css');
+	wp_enqueue_style( 'lyd-font', get_template_directory_uri() . '/fonts/stylesheet.css');
 	wp_enqueue_style( 'lyd-style', get_stylesheet_uri());
-
+	wp_register_script( 'lyd-google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAVm7hyYs5C5uxQGrw4t3McmRGLB_F8xpg', '20131209', true );
+	// wp_register_script( 'lyd-google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBNPtsjyF7lfCcv-p0epQ1w9k2NtXCUEu0', '20131209', true );
+	wp_enqueue_script( 'lyd-google-maps');
 	wp_enqueue_style( 'lyd-fonts', '//fonts.googleapis.com/css?family=Raleway|Open+Sans|Ubuntu|Ubuntu+Condensed|Oswald' );
 
 	wp_enqueue_style( 'lyd-exp-fonts', '//fonts.googleapis.com/css?family=Exo|Poiret+One|Denk+One|Voltaire|Federo|Righteous|Snippet|Cabin' );
@@ -82,22 +85,22 @@ add_action('admin_enqueue_scripts', 'admin_scripts');
 
 function lyd_widgets_init() {
 	register_sidebar( array (
-		'name' => 'Page Sidebar',
+		'name' => 'Map Text',
 		'id'   => 'sidebar-1',
-		'description' => 'Page sidebar text',
-		'before_widget' => '<ul id="%1$s" class="widget %2$s">',
-		'after_widget' => '</ul>',
+		'description' => 'Text for map overlay',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>'
 	) );
 	register_sidebar( array (
-		'name' => 'Weather Widget',
+		'name' => 'Places near by',
 		'id'   => 'sidebar-2',
-		'description' => 'Page sidebar text',
+		'description' => 'Text for places near by',
 		'before_widget' => '<ul id="%1$s" class="widget %2$s">',
 		'after_widget' => '</ul>',
-		'before_title' => '<h4 class="widget-title">',
-		'after_title' => '</h4>'
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h1>'
 	) );
 }
 add_action( 'widgets_init', 'lyd_widgets_init' );
@@ -159,24 +162,24 @@ function lyd_get_photos(){
 		endif;
 }
 function lyd_get_content($cat_id){
-	$the_cat_id = get_cat_ID($cat_id);
-	$cat_args = array(
-			'cat' => $the_cat_id,
-			'post_type' => 'post',
-			'numberposts'=> 1
-		);
-	// return $cat_args;
+		$numpost = $is_page ? -1 : 1;
+	// echo $numpost;
+		$the_cat_id = get_cat_ID($cat_id);
+		$cat_args = array(
+				'cat' => (int)$the_cat_id,
+				'post_type' => 'post',
+				'numberposts'=> 1
+			);
+		$thisQuery = new WP_Query( $cat_args );
+		if ( have_posts() ) : 
+			while ( $thisQuery->have_posts() ) : 
+				$thisQuery->the_post();
+				get_post();
+				return the_content();
 
-	$thisQuery = new WP_Query( $cat_args );
-	// return $thisQuery;
-	if ( have_posts() ) : 
-		while ( $thisQuery->have_posts() ) : 
-			$thisQuery->the_post();
-			 get_post();
-			 return the_content();
 
-		endwhile;
-	endif;
+			endwhile;
+		endif;
 }
 
 add_action( 'init', 'photo_post_type' );
@@ -240,8 +243,8 @@ function install_campsite_tables(){
 		campsite_id MEDIUMINT NOT NULL AUTO_INCREMENT,
 		campsite_number TINYTEXT NOT NULL,
 		campsite_dates_booked TEXT,
-		campsite_map_x DECIMAL(10,3) NOT NULL,
-		campsite_map_y DECIMAL(10,3) NOT NULL,
+		campsite_map_x DECIMAL(10,4) NOT NULL,
+		campsite_map_y DECIMAL(10,4) NOT NULL,
 		campsite_status TINYINT,
 		campsite_booked_by TINYINT,
 		PRIMARY KEY campsite_id (campsite_id)
@@ -399,61 +402,60 @@ function create_campsites(){
 
 	$campsite_table = $wpdb->prefix . 'lyd_campsite_table';
 	$campsites = array(
-		'A1' => new Campsite(398.663,257.435),
-		'A2' => new Campsite(433.329,279.052),
-		'A3' => new Campsite(467.996,250.666),
-		'A4' => new Campsite(495.981,281.4722),
-		'A5' => new Campsite(526.996,228.333),
-		'A6' => new Campsite(527.330,269.836),
-		'A7' => new Campsite(530.663,200.666),
-		'A8' => new Campsite(522.663,172.333),
-		'A9' => new Campsite(534.663,152.666),
-		'A10' => new Campsite(557.997,162.667),
-		'A11' => new Campsite(583.996,192),
-		'A12' => new Campsite(630.663,209.333),
-		'A13' => new Campsite(691.330,205.333),
-		'A14' => new Campsite(623.330,282.666),
-		'A15' => new Campsite(651.330,306.666),
-		'A16' => new Campsite(725.330,323.333),
-		'A17' => new Campsite(719.330,358.666),
-		'A18' => new Campsite(544.663,323.333),
-		'A19' => new Campsite(460.663,330),
-		'A20' => new Campsite(397.329,336.666),
-		'B1' => new Campsite(521.554,507.334),
-		'B2' => new Campsite(565.330,504),
-		'B3' => new Campsite(620.663,510.667),
-		'B4' => new Campsite(672.663,523.333),
-		'B5' => new Campsite(709.330,551.334),
-		'B6' => new Campsite(716.663,590.667),
-		'B7' => new Campsite(715.330,632.667),
-		'B8' => new Campsite(685.996,657.333),
-		'B9' => new Campsite(637.996,659.333),
-		'B10' => new Campsite(591.663,659.333),
-		'B11' => new Campsite(550.663,657.333),
-		'B12' => new Campsite(512.996,668.333),
-		'C1' => new Campsite(457.570,455.75),
-		'C2' => new Campsite(425.353,426),
-		'C3' => new Campsite(419.996,469.333),
-		'C4' => new Campsite(354.662,488.666),
-		'C5' => new Campsite(323.996,485.234),
-		'C6' => new Campsite(296.592,482.666),
-		'C7' => new Campsite(269.996,485.234),
-		'C8' => new Campsite(243.357,490.666),
-		'C9' => new Campsite(186.663,560.667),
-		'C10' => new Campsite(169.329,602),
-		'C11' => new Campsite(154.663,639.333),
-		'C12' => new Campsite(145.329,675.333),
+		'A1' => new Campsite(405.9287,239.9731),
+		'A2' => new Campsite(435.1113,257.8232),
+		'A3' => new Campsite(464.2949,232.2539),
+		'A4' => new Campsite(487.8267,259.9756),
+		'A5' => new Campsite(513.9629,212.1372),
+		'A6' => new Campsite(514.2432,249.5225),
+		'A7' => new Campsite(517.0498,187.2144),
+		'A8' => new Campsite(510.3154,161.6924),
+		'A9' => new Campsite(520.4150,143.9775),
+		'A10' => new Campsite(540.0605,152.9858),
+		'A11' => new Campsite(561.9473,179.4072),
+		'A12' => new Campsite(601.2314,195.0220),
+		'A13' => new Campsite(652.3027,191.4185),
+		'A14' => new Campsite(595.0576,261.0786),
+		'A15' => new Campsite(618.6299,282.6978),
+		'A16' => new Campsite(680.9248,297.7114),
+		'A17' => new Campsite(675.8730,329.5376),
+		'A18' => new Campsite(528.835,297.7114),
+		'A19' => new Campsite(458.1221,303.7163),
+		'A20' => new Campsite(404.8066,309.7212),
+		'B1' => new Campsite(509.3818,463.4551),
+		'B2' => new Campsite(549.3301,462.1025),
+		'B3' => new Campsite(592.8135,466.4580),
+		'B4' => new Campsite(636.5879,477.8687),
+		'B5' => new Campsite(667.4541,503.0918),
+		'B6' => new Campsite(673.6279,538.5225),
+		'B7' => new Campsite(672.5068,576.3555),
+		'B8' => new Campsite(647.8115,598.5732),
+		'B9' => new Campsite(613.0723,602.1826),
+		'B10' => new Campsite(575.2764,602.1826),
+		'B11' => new Campsite(538.8096,599.7236),
+		'B12' => new Campsite(502.1777,608.4824),
+		'C1' => new Campsite(455.5195,416.9902),
+		'C2' => new Campsite(428.3965,391.8149),
+		'C3' => new Campsite(423.8877,429.2251),
+		'C4' => new Campsite(368.8877,446.6401),
+		'C5' => new Campsite(341.0381,443.5493),
+		'C6' => new Campsite(313.7466,443.5493),
+		'C7' => new Campsite(287.9775,446.6401),
+		'C8' => new Campsite(262.4038,455.7373),
+		'C9' => new Campsite(227.4624,511.4980),
+		'C10' => new Campsite(212.8706,548.7305),
+		'C11' => new Campsite(200.5239,582.3604),
+		'C12' => new Campsite(192.6670,614.7861),
 			);
 	foreach ($campsites as $site => $val) {
-		// echo $site;
 		$wpdb->insert(
 			$campsite_table,
 			array(
 				'campsite_id' => '',
 				'campsite_number' => $site,
 				'campsite_dates_booked' => '',
-				'campsite_map_x' => (float)$val->x,
-				'campsite_map_y' => (float)$val->y,
+				'campsite_map_x' => $val->x,
+				'campsite_map_y' => $val->y,
 				'campsite_status' => 0,
 				'campsite_booked_by' => ''
 				
