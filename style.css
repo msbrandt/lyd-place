@@ -94,6 +94,9 @@ Version: v1.0
 	color: #fff;
 
 }
+#lyd-getting-here h1{
+	line-height: 265px; 
+}
 .page-template-page-templatespage-about-php main{
 	background-image: url('img/lines.svg');
 	background-color: #518231
@@ -161,17 +164,39 @@ Version: v1.0
 	height: 400px;
 	width: 960px;
 	margin: 0 auto;
-	background-color: #0f0;
 	position: relative;
+	border: 1px solid #fff;
+	overflow: hidden;
+
 }
 #map-decp{
 	position: absolute;
-	bottom: 0;
+	/*bottom: -115px;*/
+	bottom: -65px;
 	right: 0;
-	height: 150px;
+	height: 100px;
 	width: 300px;
-	background-color: #0ff;
+	/*background-color: #7f9d6c;*/
+	background-image: url('img/lines.svg');
+	cursor: pointer;
+	-webkit-transition: all .5s ease; 
+    -moz-transition: all .5s ease; 
+    -o-transition: all .5s ease; 
+    -ms-transition: all .5s ease; 
+    transition: all .5s ease;
 }
+#map-decp:hover{
+	bottom: 0;
+}
+#map-decp h4{
+	font-family: 'Oswald';
+	color: #518231;
+	margin-left: 10px;
+}
+#map-decp #text-2 .textwidget{
+	font-family: 'Open Sans';
+	margin-left: 15px;
+} 
 .lyd-page{
 	height: 100%;
 	width: 100%;
@@ -696,7 +721,8 @@ a .footer-nav-container {
 
 .reserve-btn-2{
 	padding: 5px 10px;
-	background: linear-gradient(to bottom, #8fcf00, #6b9c00) repeat scroll 0 0 #7db500;
+	/*background: linear-gradient(to bottom, #8fcf00, #6b9c00) repeat scroll 0 0 #7db500;*/
+	background-color: 
 	border-radius: 20px;
 	width: 30%;
 	margin: 15px auto 0 auto;
