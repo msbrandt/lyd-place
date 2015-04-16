@@ -6,6 +6,8 @@ create_hero_reg('Learn More');
 ?>
 </section>
 <section id="about-page-content">
+	<div class="box-shadow"></div>
+	
 	<div id="page-container">
 		<div id="page-content">
 <?php 

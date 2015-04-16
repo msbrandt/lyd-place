@@ -31,6 +31,17 @@ Version: v1.0
     font-style: normal;
 
 }*/
+.box-shadow{
+	box-shadow: 0 0 5px #333 inset;
+	width: 100%;
+	position: absolute;
+	z-index: 9;
+	/*height: 490px;*/
+	top: 75px;
+	padding: 0 0 1px;
+	height: 86.75%;
+
+}
 #getting-container .col-md-4{
 	margin: 0;
 }
@@ -79,6 +90,7 @@ Version: v1.0
 	width: 100%;
 	/*height: 500px; */
 	margin-top: -75px;
+	position: relative;
 }
 #about-page-content a img{
 	float: right;
@@ -98,6 +110,8 @@ Version: v1.0
 	box-shadow: 1px 2px 1px #333, -1px 2px 1px #333;
 	/*height: 500px;*/
 	margin: 0 auto;
+	position: relative;
+	z-index: 999;
 }
 #about-page-content #page-container #page-content{
 	width: 960px;
@@ -125,9 +139,10 @@ Version: v1.0
 	width: 100%;
 }
 #getting-container{
-	border-top: 5px solid #518231;
-	background-image: url('img/lines.svg');
+	background-image: url("img/lines.svg");
 	background-repeat: repeat;
+	border-top: 5px solid #518231;
+	box-shadow: 0 0 5px #333 inset;
 
 }
 #map-container{
@@ -152,6 +167,8 @@ Version: v1.0
 	background-size: cover;
 	background-position: center;
 	position: relative;
+	border-bottom: 5px solid #518231;
+
 }
 .admin-bar .content-wrapper{
 	top: -30px;
@@ -183,11 +200,14 @@ p{
 }
 footer{
 	border-top: 5px solid #518231;
-	background: #518231;
-	background-image: url('img/lines3.svg');
+	background: #997859;
+	/*background-image: url('img/lines3.svg');*/
+
 	height: 95px;
 	padding: 0;
 	margin: 0;
+	position: relative;
+	z-index: 9999;
 }
 footer div:last-of-type{
 	text-align: center;
@@ -486,7 +506,7 @@ a .footer-nav-container {
 	position: fixed;
 	top: 47px;
 	left: 22px;
-	z-index: 5;
+	z-index: 99999;
 	border: 3px solid #fff;
 	/*border-right: 3px solid #fff;*/
 }
@@ -499,7 +519,7 @@ a .footer-nav-container {
 	width: 20%;
 	background: rgba(0,0,0,0.75);
 	height: 500px;
-	z-index: 2;
+	z-index: 999999;
 	-webkit-transition: all .5s;
 	transition: all .5s;
 	color: #999;
@@ -550,10 +570,14 @@ a .footer-nav-container {
 	height: 550px;
 	background-image: url('img/lines.svg');
 	background-color: #518231;
+	box-shadow: 0 0 5px #333 inset;
 }
 #contact-us{
 	background-image: url('img/lines.svg');
 
+}
+.lyd-nav #contact-us{
+	background: transparent;
 }
 .lyd-camp-page .row{
 	position: relative;
