@@ -31,6 +31,17 @@ Version: v1.0
     font-style: normal;
 
 }*/
+#getting-container .col-md-4{
+	margin: 0;
+}
+#getting-container h1{
+	color: #518231;
+	font-family: 'Oswald';
+}
+#getting-container ul{
+	padding: 0;
+	margin: 0;
+}
 .row{
 	margin: 0;
 }
@@ -40,13 +51,15 @@ Version: v1.0
 	width: 100%;
 }
 .about-title{
+	color: #518231;
+	font-family: 'Oswald';
 	margin: 0 0 10px;
 	padding-top: 20px;
 }
 .page-title-container h1{
 	margin: 0;
 	padding: 0;
-	line-height: 220px;
+	line-height: 410px;
 	font-size: 75px;
 	font-family: 'webfontregular';
 
@@ -67,12 +80,21 @@ Version: v1.0
 	/*height: 500px; */
 	margin-top: -75px;
 }
+#about-page-content a img{
+	float: right;
+	margin: 10px 0 10px 10px;
+}
+#about-page-content p{
+	font-family: 'Open Sans';
+	color: #163800;
+}
 #about-page-content #page-container{
 	width: 1020px;
 	border-top: 5px solid #518231;
+	padding-bottom: 5px;
 	/*background-image: url('img/lines2.svg');*/
 
-	background-color: #7F9D6C;
+	background-color: #F4FFED;
 	box-shadow: 1px 2px 1px #333, -1px 2px 1px #333;
 	/*height: 500px;*/
 	margin: 0 auto;
@@ -162,20 +184,89 @@ p{
 footer{
 	border-top: 5px solid #518231;
 	background: #518231;
-	background-image: url('img/lines2.svg');
+	background-image: url('img/lines3.svg');
+	height: 95px;
+	padding: 0;
+	margin: 0;
+}
+footer div:last-of-type{
+	text-align: center;
+}
+footer h4{
+	height: 100%;
+	font-family: 'webfontregular';
+	color: #fff;
+	line-height: 90px;
+	margin: 0;
+}
+footer h4 a{
+	color: #fff;
+	text-decoration: underline;
+	-webkit-transition: all .25s ease; 
+    -moz-transition: all .25s ease; 
+    -o-transition: all .25s ease; 
+    -ms-transition: all .25s ease; 
+    transition: all .25s ease;
+
+}
+footer h4 a:hover{
+	color: #333;
+	text-decoration: underline;
+}
+footer h5{
+	font-size: 20px;
+	margin: 10px 0 5px 0;
+	font-family: 'webfontregular';
+	color: #fff;
+	float: left;
+	width: 30%;
+	height: 100%;
+	line-height: 70px;
+
+}
+footer h5 a{
+	color: #fff;
+}
+footer h5 a:hover{
+	color: #333;
 }
 #learn-more + footer,
 #Contact + footer{
 	margin-top: -20px !important;
 }
 footer ul{
-	width: 100%;
+	width: 70%;
 	margin: 0;
 	padding: 0;
+	float: right;
 }
 footer ul li{
-	display: block;
-	list-style: none;
+	display: inline-block;
+	height: 80px;
+	line-height: 90px;
+	list-style: outside none none;
+	padding: 0 10px;
+	-webkit-transition: all .25s ease; 
+    -moz-transition: all .25s ease; 
+    -o-transition: all .25s ease; 
+    -ms-transition: all .25s ease; 
+    transition: all .25s ease;
+}
+footer ul li:last-of-type{
+	margin-bottom: 10px;
+}
+footer a{
+	text-transform: capitalize;
+
+}
+footer ul li a{
+	color: #fff;
+	font-family: 'Open Sans';
+	text-decoration: underline;
+}
+footer ul li a:hover{
+	color: #333;
+	text-decoration: underline;
 }
 .lyd-btn{
 	padding: 10px 16px;
@@ -459,6 +550,10 @@ a .footer-nav-container {
 	height: 550px;
 	background-image: url('img/lines.svg');
 	background-color: #518231;
+}
+#contact-us{
+	background-image: url('img/lines.svg');
+
 }
 .lyd-camp-page .row{
 	position: relative;

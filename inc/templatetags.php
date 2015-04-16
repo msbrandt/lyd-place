@@ -141,7 +141,7 @@ function footer_navbar($the_page){
       Learn More 
     </div>
   </a>
-  <a class="footer-nav-bo col-md-4" href="<?php echo get_permalink( get_page_by_path( 'Getting here and around' ) ); ?>">
+  <a class="footer-nav-bo col-md-4" href="<?php echo get_permalink( get_page_by_path( 'Getting Here' ) ); ?>">
     <div class="nav-bg-img" id="nav-gh"></div>
     <div class="footer-nav-container">
       Getting here and around
@@ -163,7 +163,7 @@ function footer_navbar($the_page){
 function real_footer_nav(){
   ?>
   <div class="col-md-6">
-    <h5>Lydia's Place inc</h5>
+    <h5><a href="<?php echo get_home_url(); ?>"> Lydia's Place inc</a></h5>
     <?php wp_nav_menu();?>
   </div>
   <div class="col-md-6">

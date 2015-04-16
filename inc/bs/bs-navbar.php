@@ -91,7 +91,6 @@ class BS_Walker_Nav_Menu extends Walker_Nav_Menu {
 		$this_link = strtolower( $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after);
 		$item_output = $args->before;
 		// if(get_permalink( get_page_by_path(  $item->title  ) ))
-		echo get_permalink( get_page_by_path(  $item->title  ) ) . ' - '.$item->title.'<br />';
 		$item_output .= '<a href="'.get_permalink( get_page_by_path(  $item->title  ) ).'" class="my-nav-button">';
 		/** This filter is documented in wp-includes/post-template.php */
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
