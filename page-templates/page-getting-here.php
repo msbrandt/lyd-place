@@ -21,6 +21,7 @@ create_hero_reg('Getting Here');
 	<div>
 		<div class="row">
 			<div class="col-md-4">
+				<h1>Places Near By</h1>
 		           <?php dynamic_sidebar( 'sidebar-2' ); ?>
 
 			</div>

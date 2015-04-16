@@ -31,6 +31,18 @@ Version: v1.0
     font-style: normal;
 
 }*/
+#getting-container .col-md-4 ul{
+	background: none repeat scroll 0 0 #7f9d6c;
+	box-shadow: 0 1px 3px #333;
+}
+#getting-container .col-md-8{
+	margin-bottom: 50px;
+}
+#getting-container .col-md-4 .textwidget > li {
+  font-family: 'Open Sans';
+  list-style: outside none none;
+  padding: 5px;
+}
 .box-shadow{
 	box-shadow: 0 0 5px #333 inset;
 	width: 100%;
@@ -469,11 +481,12 @@ a .footer-nav-container {
 }
 #lyd-photos{
 	width: 100%;
-	background: #0f0;
+	background: #7f9d6c;
 	height: 100%;
 	text-align: center;
 	margin: 0;
 	padding: 0;
+	box-shadow: 0 1px 3px #333;
 
 }
 .pg-txt{
