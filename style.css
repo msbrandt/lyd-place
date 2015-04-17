@@ -271,13 +271,14 @@ footer ul{
 	margin: 0;
 	padding: 0;
 	float: right;
+	height: 90px;
 }
 footer ul li{
 	display: inline-block;
 	height: 80px;
 	line-height: 90px;
 	list-style: outside none none;
-	padding: 0 10px;
+	padding: 0 5px;
 	-webkit-transition: all .25s ease; 
     -moz-transition: all .25s ease; 
     -o-transition: all .25s ease; 
