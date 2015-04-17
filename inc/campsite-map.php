@@ -5,7 +5,6 @@ function campsite_map(){
 	$campsites = $wpdb->get_results("SELECT * FROM " . $campsite_table);
 
 ?>
-<?xml version="1.0" encoding="utf-8"?>
 
 <svg version="1.1" x="0px" y="0px" width="750px"
 	 height="650px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">

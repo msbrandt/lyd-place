@@ -279,7 +279,7 @@ function install_campsite_tables(){
 	// create_campsites();
 
 }
-add_action( 'after_switch_theme', 'install_campsite_tables' );
+// add_action( 'after_switch_theme', 'install_campsite_tables' );
 function save_booking_info_handler(){
 	
 	global $wpdb;
@@ -328,7 +328,7 @@ function save_booking_info_handler(){
 	}
 	$info_array['client_booking_status'] = 1;
 	$form_array['booking_status'] = 1;
-	$the_ID = create_client($info_array);
+	// $the_ID = create_client($info_array);
 	$form_array['booking_client_id'] = $the_ID;
 	// echo $the_ID;
 
@@ -338,8 +338,8 @@ function save_booking_info_handler(){
 
 	exit();
 }
-add_action( 'wp_ajax_save_booking_info', 'save_booking_info_handler' );
-add_action( 'wp_ajax_nopriv_save_booking_info', 'save_booking_info_handler' );
+// add_action( 'wp_ajax_save_booking_info', 'save_booking_info_handler' );
+// add_action( 'wp_ajax_nopriv_save_booking_info', 'save_booking_info_handler' );
 
 function create_booking_ticket($fp){
 	global $wpdb;
@@ -359,13 +359,13 @@ function create_booking_ticket($fp){
 			'%d'
 			)
 		);
-	$cps = $wpdb->get_results("SELECT * FROM " . $campsite_table . " WHERE campsite_number='".$fp['booking_campsite_number']."'")[0];
+	// $cps = $wpdb->get_results("SELECT * FROM " . $campsite_table . " WHERE campsite_number='".$fp['booking_campsite_number']."'")[0];
 	$cps->campsite_status = 2;
 	$rs = array();
 	foreach ($cps as $key => $val) {
 		$rs[$key] = $val;
 	}
-	$wpdb->update( $campsite_table, $rs, array('campsite_id'=>$cps->campsite_id));
+	// $wpdb->update( $campsite_table, $rs, array('campsite_id'=>$cps->campsite_id));
 }
 function create_client($info){
 	global $wpdb;
@@ -383,7 +383,7 @@ function create_client($info){
 			'%d'
 			)
 		);
-	$client_ID = $wpdb->get_results("SELECT * FROM " . $client_table . " WHERE client_name='".$info['client_name']."'");
+	// $client_ID = $wpdb->get_results("SELECT * FROM " . $client_table . " WHERE client_name='".$info['client_name']."'");
 	// $client_ID = $wpdb->get_results("SELECT * FROM " . $client_table . " WHERE client_name='Me'");
 	return $client_ID[0]->client_id;
 	// var_dump($info);
