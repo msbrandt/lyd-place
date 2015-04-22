@@ -7,7 +7,7 @@ create_hero_reg('Contact');
 <section id="about-page-content">
 	<div class="box-shadow"></div>
 	<div id="page-container">
-		<div id="page-content">
+		<div id="page-content" class="contact-page">
 <?php 
 $the_cat_id = get_cat_ID('Contact');
 $cat_args = array(
@@ -24,7 +24,6 @@ if ( have_posts() ) :
 	<?php
 		the_content();
 ?>
-<hr>
 <?php
 
 	endwhile;

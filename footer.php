@@ -2,7 +2,7 @@
 
 </main>
 
-<footer id="footer" class="row">
+<footer id="footer" >
 	<?php real_footer_nav(); ?>
 </footer>
 

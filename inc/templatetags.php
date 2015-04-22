@@ -2,16 +2,16 @@
 function lyd_header(){
 	?>
   <header>
-      <button type="button" class="navbar-toggle collapsed" >
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+    <button type="button" class="navbar-toggle collapsed non-frontpage" >
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
     <nav class="lyd-nav">
       <span class="close-nav">x</span>
       <h2><a href="<?php echo get_home_url(); ?>">Lydia's Place Inc</a></h2>
 
-      <?php lyd_nav(); ?>
+      <?php wp_nav_menu();?>
 
     </nav>
 
@@ -37,7 +37,15 @@ function create_hero($the_page){
           <?php endif; ?>
         </div>
       </div>  
-      <div class="hero-border"></div>
+      <div class="hero-border">
+        <div id="hero-btn-container">
+          <button type="button" class="navbar-toggle collapsed" >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
    </section>
 
 <?php
@@ -135,22 +143,22 @@ function lyd_photo_gallery(){
 function footer_navbar($the_page){
   ?>
   <div class="row footer-nav">
-  <a class="footer-nav-bo col-md-4" href="<?php echo get_permalink( get_page_by_path( 'Learn More' ) ); ?>" >
+  <a class="footer-nav-bo tt" href="<?php echo get_permalink( get_page_by_path( 'Learn More' ) ); ?>" >
     <div class="nav-bg-img" id="nav-about"></div>
     <div class="footer-nav-container">
-      Learn More 
+      Learn More  
     </div>
   </a>
-  <a class="footer-nav-bo col-md-4" href="<?php echo get_permalink( get_page_by_path( 'Getting Here' ) ); ?>">
+  <a class="footer-nav-bo tt" href="<?php echo get_permalink( get_page_by_path( 'Getting Here' ) ); ?>">
     <div class="nav-bg-img" id="nav-gh"></div>
     <div class="footer-nav-container">
-      Getting here and around
+      Getting here and around 
     </div>
   </a>
-  <a class="footer-nav-bo col-md-4" href="<?php echo get_permalink( get_page_by_path( 'Contact' ) ); ?>">
+  <a class="footer-nav-bo tt" href="<?php echo get_permalink( get_page_by_path( 'Contact' ) ); ?>">
     <div class="nav-bg-img" id="nav-contact"></div>
     <div class="footer-nav-container">
-      contact us
+      contact us 
     </div>
   </a>
 
@@ -162,11 +170,11 @@ function footer_navbar($the_page){
 }
 function real_footer_nav(){
   ?>
-  <div class="col-md-6">
+  <div id="real-footer-l">
     <h5><a href="<?php echo get_home_url(); ?>"> Lydia's Place inc</a></h5>
     <?php wp_nav_menu();?>
   </div>
-  <div class="col-md-6">
+  <div id="real-footer-r">
     <h4> Designed and Developed by <a target="_blank" href="http://michaelbrandt.info">mikey brandt</a></h4>
   </div>
 

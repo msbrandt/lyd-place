@@ -1,5 +1,4 @@
 <?php
- require get_template_directory() . '/inc/my-navbar.php';
  require get_template_directory() . '/inc/templatetags.php';
  require get_template_directory() . '/inc/campsite-map.php';
  require get_template_directory() . '/wid/weather-widget.php';

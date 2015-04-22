@@ -1,6 +1,6 @@
 
 <section class="lyd-camp-page" >
-	<a id="reserve-now">
+	<a id="reserve-now" ></a>
   <div class="row">
     <div id="camp-reserve" class="col-md-5">
       <div class="section-container">

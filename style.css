@@ -1,5 +1,5 @@
 /*
-Theme Name: Lydia's Place inc RV-use
+Theme Name: Lydia's Place inc RV-v1.0
 Author: Mikey Brandt
 Version: v1.0
 
@@ -31,6 +31,11 @@ Version: v1.0
     font-style: normal;
 
 }*/
+#camp-map div{
+	height: 500px;
+	width: 90%;
+	background-color: #033;
+}
 #getting-container .col-md-4 ul{
 	background: none repeat scroll 0 0 #7f9d6c;
 	box-shadow: 0 1px 3px #333;
@@ -113,7 +118,7 @@ Version: v1.0
 }
 #about-page-content p{
 	font-family: 'Open Sans';
-	color: #163800;
+	color: #265C03;
 }
 #about-page-content #page-container{
 	width: 1020px;
@@ -196,6 +201,7 @@ Version: v1.0
 #map-decp #text-2 .textwidget{
 	font-family: 'Open Sans';
 	margin-left: 15px;
+	color: #265C03;
 } 
 .lyd-page{
 	height: 100%;
@@ -218,7 +224,7 @@ Version: v1.0
 	top: 0; bottom: 0;
 	right: 0; left: 0;
 	margin: auto;
-	height: 300px;
+	height: 365px;
 	z-index: 999;
 }
 
@@ -257,7 +263,7 @@ footer h4{
 	margin: 0;
 }
 footer h4 a{
-	color: #fff;
+	color: #ccc;
 	text-decoration: underline;
 	-webkit-transition: all .25s ease; 
     -moz-transition: all .25s ease; 
@@ -267,7 +273,7 @@ footer h4 a{
 
 }
 footer h4 a:hover{
-	color: #333;
+	color: #fff;
 	text-decoration: underline;
 }
 footer h5{
@@ -282,10 +288,10 @@ footer h5{
 
 }
 footer h5 a{
-	color: #fff;
+	color: #ccc;
 }
 footer h5 a:hover{
-	color: #333;
+	color: #fff;
 }
 #learn-more + footer,
 #Contact + footer{
@@ -318,12 +324,11 @@ footer a{
 
 }
 footer ul li a{
-	color: #fff;
+	color: #ccc;
 	font-family: 'Open Sans';
-	text-decoration: underline;
 }
 footer ul li a:hover{
-	color: #333;
+	color: #fff;
 	text-decoration: underline;
 }
 .lyd-btn{
@@ -364,6 +369,11 @@ footer ul li a:hover{
 	height: 300px;
 	overflow: hidden;
 	cursor: pointer;
+}
+.tt{
+	width: 33.3333%;
+	position: relative;
+	float: left;
 
 }
 .nav-bg-img{
@@ -539,14 +549,30 @@ a .footer-nav-container {
 	height: 100%;
 	width: 100%;
 }
+.home .non-frontpage{
+	display: none;
+}
+.home .non-frontpage{
+	display: none;
+}
+#hero-btn-container{
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+.home .navbar-toggle{
+	top: 23px;
+	left: 22px;
+}
 .navbar-toggle{
 	display: block;
 	float: none;
 	position: fixed;
-	top: 47px;
-	left: 22px;
+	top: 50px;
+	left: 25px;
 	z-index: 99999;
 	border: 3px solid #fff;
+	margin: 0;
 	/*border-right: 3px solid #fff;*/
 }
 
@@ -555,14 +581,14 @@ a .footer-nav-container {
 }
 .lyd-nav {
 	position: fixed;
-	width: 20%;
+	width: 26%;
 	background: rgba(0,0,0,0.75);
 	height: 500px;
 	z-index: 999999;
 	-webkit-transition: all .5s;
 	transition: all .5s;
 	color: #999;
-	left: -20%;
+	left: -26%;
 	/*display: none;*/
 }
 .close-nav{
@@ -673,12 +699,19 @@ a .footer-nav-container {
 	float: right;
 
 }
-
+.contact-page > div.wpcf7{
+	margin: 0 auto;
+	width: 600px;
+}
 #campsite-book input,
-#campsite-book select {
+#campsite-book select,
+#about-page-content input,
+#about-page-content select,
+#about-page-content textarea {
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 3px;
+	border-color: #ccc;
 	/*display: block;*/
 	/*line-height: 18px;*/
 	/*margin: 0 0 18px;*/
@@ -687,6 +720,14 @@ a .footer-nav-container {
 	/*margin: 0 auto;*/
 	-webkit-transition: all .25s;
 	transition: all .25s;
+}
+#about-page-content input,
+#about-page-content select,
+#about-page-content textarea{
+	width: 100%;
+	border: 1px solid #518231;
+	background-color: #DDEBD4;
+	color: #265C03;
 }
 
 #campsite-book input,
@@ -697,10 +738,23 @@ a .footer-nav-container {
 
 #campsite-book input:active,
 #campsite-book input:focus,
-#campsite-book input:hover {
-	/*background: #5e6163;*/
+#campsite-book input:hover,
+#campsite-book select:active,
+#campsite-book select:focus,
+#campsite-book select:hover {
+	background: #577743;
 	border-color: #fff;
 	outline: none;
+}
+#about-page-content input:active,
+#about-page-content input:focus,
+#about-page-content input:hover,
+#about-page-content textarea:active,
+#about-page-content textarea:focus,
+#about-page-content textarea:hover{
+	outline: none;
+	border-color: #997859;
+	background-color: #C7D6BE;
 }
 
 ::-webkit-input-placeholder {
@@ -719,26 +773,40 @@ a .footer-nav-container {
 :-ms-input-placeholder {
 	color: #ddd;
 }
+#about-page-content ::-webkit-input-placeholder {
+	color: #337E03;
+	line-height: normal;
+}
+
+#about-page-content :-moz-placeholder {
+	color: #337E03;
+}
+
+#about-page-content ::-moz-placeholder {
+	color: #337E03;
+}
+
+#about-page-content :-ms-input-placeholder {
+	color: #337E03;
+}
 
 .reserve-btn-2{
 	padding: 5px 10px;
-	/*background: linear-gradient(to bottom, #8fcf00, #6b9c00) repeat scroll 0 0 #7db500;*/
-	background-color: 
-	border-radius: 20px;
+	background-color: #617e4e;
+	border-radius: 3px;
 	width: 30%;
 	margin: 15px auto 0 auto;
 	cursor: pointer;
 	text-align: center;
 	-webkit-transition: all .5s;
-
 	transition: all .5s;
-
-	
-
+	box-shadow: 0 1px 3px #333;
+	color: #ccc;
 
 }
 .reserve-btn-2:hover{
-	background: linear-gradient(to bottom, #a0e800, #6b9c00) repeat scroll 0 0 #7db500;
+	box-shadow: 0 1px 3px #333 inset;
+	color: #fff;
 
 }
 .camp-ip-grp{
@@ -749,4 +817,182 @@ a .footer-nav-container {
 }
 .footer-nav .col-md-4{
 	padding: 0;
+}
+#real-footer-l{
+	width: 60%;
+	float: left;
+}
+#real-footer-l h5{
+	padding-left: 20px;
+
+}
+#real-footer-l ul{
+	/*margin-left: -20px;*/
+}
+#real-footer-r{
+	width: 40%;
+	float: left;
+}
+@media all and (max-width: 1000px){
+	.lyd-camp-page{
+		height: auto;
+	}
+	#camp-reserve{
+		height: 300px;
+	}
+	#camp-map div{
+		height: 300px;
+		margin: 10px auto;
+	}
+	#footer .col-md-6{
+		width: 50%;
+		float: left;
+		padding: 0 0 0 5px;
+	}
+	footer h5{
+		font-size: 15px;
+	}
+	footer ul li a{
+		font-size: 12px;
+	}
+}
+@media all and (max-width: 1105px){
+	
+}
+@media all and (max-width: 980px){
+	#footer .col-md-7{
+		width: 60%;
+	}
+	#footer .col-md-5{
+		width: 40%;
+	}
+	#about-page-content #page-container #page-content{
+		width: 100%;
+		padding: 20px;
+	}
+	#about-page-content #page-container{
+		width: 100%;
+	}
+	#map-container{
+		width: 90%;
+	}
+	footer h4{
+		font-size: 15px;
+	}
+}
+@media all and (max-width: 800px){
+	.content-wrapper{
+		width: 100%;
+	}
+	p{
+		width: 100%;
+		padding: 0 30px;
+	}
+
+}
+@media all and (max-width: 768px){
+	.lyd-nav{
+		width: 33%;
+		left: -33%;
+		background-color: rgba(0,0,0,0.95);
+
+	}
+	#footer .col-md-6:first-of-type{
+		width: 70%;
+	}
+	#footer .col-md-6:last-of-type{
+		width: 30%;
+		padding-top: 30px;
+	}
+	#footer .col-md-6:last-of-type h4{
+		line-height: 20px;
+		font-size: 15px;
+
+	}
+	footer ul li{
+		padding: 0 2.5px;
+	}
+	footer ul li a{
+		font-size: 11px;
+	}
+
+}
+@media all and (max-width: 640px){
+	.page-padding h1{
+		font-size: 30px;
+	}
+	.content-wrapper{
+		height: 280px;
+	}
+	.lyd-btn {
+		  font-size: 13px;
+		  padding: 5px 10px;
+		  width: 105px;
+	}
+	.lyd-nav h2{
+		font-size: 20px;
+	}
+	.lyd-nav ul li a{
+		font-size: 14px;
+	}
+	.lyd-nav ul{
+		padding: 0 0 0 20px;
+	}
+	#camp-reserve{
+		margin: 10px 0;
+	}
+
+}
+@media all and (max-width: 620px){
+	#footer .col-md-6:last-of-type h4{
+		/*font-size: 12px;*/
+	}
+}
+@media all and (max-width: 590px){
+	footer ul li{
+		line-height: 14px;
+		display: block;
+		height: auto;
+		padding: 2.5px 0;
+	}
+	#footer .col-md-6:first-of-type{
+		width: 60%;
+	}
+	#footer .col-md-6:last-of-type{
+		width: 40%;
+	}
+	footer h5{
+		width: 65%;
+		font-size: 18px;
+	}
+	footer ul{
+		width: 35%;
+	}
+}
+@media all and (max-width: 480px){
+	#lyd-Home .page-padding p{
+		display: none;
+	}
+	.content-wrapper{
+		height: 170px;
+	}	
+
+}
+@media all and (max-width: 360px){
+	.lyd-nav{
+		width: 50%;
+		left: -50%;
+	}
+	.section-container{
+		width: 90%;
+	}
+
+	#footer .col-md-6:last-of-type{
+		padding-top: 15px;
+	}
+	footer h5{
+		line-height: 20px;
+		margin-top: 25px;
+		text-align: center;
+	}
 }
