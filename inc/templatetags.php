@@ -101,7 +101,7 @@ function lyd_photo_gallery(){
        //    		break;
        //    }
        ?>
-<h1>PHOTO GALARRY</h1>
+<h1>Photo Gallary</h1>
 
        <ul id="lyd-photos">
        <?php

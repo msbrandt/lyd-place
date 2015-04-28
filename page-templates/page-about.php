@@ -21,11 +21,12 @@ if ( have_posts() ) :
 	while ( $thisQuery->have_posts() ) : 
 		$thisQuery->the_post();
 	?>
-
+	<div>
 	<h2 class="about-title"><?php the_title(); ?></h2>
 	<?php
 		the_content();
 ?>
+	</div>
 <hr>
 <?php
 
