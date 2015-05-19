@@ -13,6 +13,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no width=device-width" />
+<meta name="description" content="Lydia's Place Inc. RV Campsites, Located in the Adirondack Park, in the town of Hopkinton, New York offers 44 sites within miles of Adirondack trails...." />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="shortcut icon" type="image/x-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 
