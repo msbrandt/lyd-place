@@ -32,15 +32,22 @@ jQuery(function($){
         if(w > 1950){
           $('.home .navbar-toggle').css('left', '17px');
         }
+        if(w < 1950 && h < 905){
+          $('.home .navbar-toggle').css('left', '22px');
+
+        }
         if((w < 1028) && (w > 768)){
           $('.home .navbar-toggle').css('left', '22px');
 
         }
-
         if((w < 768) && (w > 414)){
-          $('.home .navbar-toggle').css('left', '17px');
-
+          if(w < 645 && h < 365){
+            $('.home .navbar-toggle').css('left', '22px');
+          }else{
+            $('.home .navbar-toggle').css('left', '17px');
+          }
         }
+      
         if(w < 414){
           $('.home .navbar-toggle').css('left', '22px');
 
@@ -93,7 +100,8 @@ jQuery(function($){
       var campLocation = new google.maps.LatLng(44.675410, -74.690689);
       var mapOptions = {
         center: campLocation,
-        zoom: 13
+        zoom: 14,
+        scrollwheel: false
       };
       var map = new google.maps.Map(document.getElementById('lyd-map'),
           mapOptions);
@@ -119,6 +127,27 @@ jQuery(function($){
     });
     // }
     // google.maps.event.addDomListener(window, 'load', initialize);
+    var newDate = new Date();
 
+    $('#camp-from').datepicker({
+        defaultDate: "+1w",
+        // minDate: 
+        numberOfMonths: 2,
+        minDate: new Date(newDate.getFullYear(), '04', '22'),
+        maxDate: new Date(newDate.getFullYear(), '07', '30'),
+        onClose: function( selectedDate ) {
+          $( "#camp-to" ).datepicker( "option", "minDate", selectedDate );
+        }      
+    });
+    $('#camp-to').datepicker({
+        defaultDate: "+1w",
+        // minDate: 
+        numberOfMonths: 2,
+        minDate: new Date(newDate.getFullYear(), '04', '22'),
+        maxDate: new Date(newDate.getFullYear(), '07', '30'),
+        onClose: function( selectedDate ) {
+          $( "#camp-from" ).datepicker( "option", "maxDate", selectedDate );
+        }
+    });
 
 });

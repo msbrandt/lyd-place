@@ -1,5 +1,5 @@
 <?php
- // Template Name: lyd-contact1
+ // Template Name: Contact
 create_hero_reg('Contact');
 ?>
 

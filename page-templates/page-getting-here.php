@@ -1,5 +1,5 @@
 <?php 
- // Template Name: lyd-getting-here
+ // Template Name: Getting Here
 
 create_hero_reg('Getting Here');
 ?>

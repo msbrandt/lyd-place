@@ -7,58 +7,19 @@ Version: v1.0
 /**
 * Table of contents
 *  0.0 - General
-*  1.0 - Navbar / Header
-*    1.1 - Hero / page
-*  2.0 - About
-*  3.0 - Campsite 
-*  4.0 - Photos
-*  5.0 - Getting Here
-*  6.0 - 
-*  7.0 - 
-*  8.0 - Media queries
-*  
+*  1.0 - Navbar / Hero
+*  2.0 - Learn More
+*  3.0 - Getting Hear 
+*  4.0 - Contact
+*  5.0 - Reserve Section
+*  6.0 - Photo Gallery
+*  7.0 - Nav-Footer
+*  8.0 - Footer
+*  9.0 - Inputs
+*  10.0 - Media queries
 */
 
-/*  0.0 - General */
-#Contact form h3{
-	text-align: center;
-}
-#Contact form p img{
-	text-align: center;
-	margin-bottom: 10px;
-}
-#Contact .box-shadow{
-	height: 87.5%;
-}
-#learn-more #page-content > div{
-	min-height: 420px;
-}
-#learn-more + footer > div{
-	/*margin-top: -70px;*/
-}
-
-#learn-more .box-shadow{
-	height: 89.9%
-}
-#camp-map div{
-	height: 500px;
-	width: 95%;
-	background-color: #033;
-	margin: 25px auto;
-}
-#getting-container .col-md-4 ul{
-	background: none repeat scroll 0 0 #7f9d6c;
-	box-shadow: 0 1px 3px #333;
-}
-#getting-container .col-md-8{
-	margin-bottom: 50px;
-}
-#getting-container .col-md-4 .textwidget > li {
-  font-family: 'Open Sans';
-  list-style: outside none none;
-  padding: 5px;
-  color: #fff;
-}
+/*******************  0.0 - General *******************/
 .box-shadow{
 	box-shadow: 0 0 5px #333 inset;
 	width: 100%;
@@ -70,17 +31,6 @@ Version: v1.0
 	height: 86.75%;
 
 }
-#getting-container .col-md-4{
-	margin: 0;
-}
-#getting-container h1{
-	color: #518231;
-	font-family: 'Oswald';
-}
-#getting-container ul{
-	padding: 0;
-	margin: 0;
-}
 .row{
 	margin: 0;
 }
@@ -88,12 +38,6 @@ Version: v1.0
 	margin: 0;
 	padding: 10px 10px 0;
 	width: 100%;
-}
-.about-title{
-	color: #518231;
-	font-family: 'Oswald';
-	margin: 0 0 10px;
-	padding-top: 20px;
 }
 .page-title-container h1{
 	margin: 0;
@@ -110,113 +54,6 @@ Version: v1.0
 	color: #fff;
 
 }
-#lyd-getting-here h1{
-	line-height: 265px; 
-}
-.page-template-page-templatespage-about-php main{
-	background-image: url('img/lines.svg');
-	background-color: #518231
-}
-#about-page-content{
-	width: 100%;
-	/*height: 500px; */
-	margin-top: -75px;
-	position: relative;
-}
-#about-page-content a img{
-	float: right;
-	/*margin: 10px 0 10px 10px;*/
-	padding: 10px;
-}
-#about-page-content p{
-	font-family: 'Open Sans';
-	color: #265C03;
-}
-#about-page-content #page-container{
-	width: 1020px;
-	border-top: 5px solid #518231;
-	padding-bottom: 5px;
-	/*background-image: url('img/lines2.svg');*/
-
-	background-color: #F4FFED;
-	box-shadow: 1px 2px 1px #333, -1px 2px 1px #333;
-	/*height: 500px;*/
-	margin: 0 auto;
-	position: relative;
-	z-index: 999;
-}
-#about-page-content #page-container #page-content{
-	width: 960px;
-	/*height: 500px;*/
-	margin: 0 auto;
-}
-.lyd-modal-img{
-	height: 100%;
-	width: 100%;
-	background-size: cover;
-	background-position: center;
-}
-.modal-body{
-	height: 500px;
-	width: 100%;
-
-}
-#lyd-learn-more.lyd-page-reg,
-#lyd-Contact.lyd-page-reg{
-	height: 430px;
-	border-bottom: 5px solid #518231;
-}
-#lyd-map{
-	height: 100%;
-	width: 100%;
-}
-#getting-container{
-	background-image: url("img/lines.svg");
-	background-repeat: repeat;
-	border-top: 5px solid #518231;
-	box-shadow: 0 0 5px #333 inset;
-
-}
-#map-container{
-	height: 400px;
-	width: 960px;
-	margin: 0 auto;
-	position: relative;
-	border: 1px solid #fff;
-	overflow: hidden;
-
-}
-#map-decp{
-	position: absolute;
-	/*bottom: -115px;*/
-	bottom: -65px;
-	right: 0;
-	height: 100px;
-	width: 300px;
-	/*background-color: #7f9d6c;*/
-	border-radius: 3px;
-	background-image: url('img/lines.svg');
-	cursor: pointer;
-	box-shadow: 0 1px 3px #333;
-	-webkit-transition: all .5s ease; 
-    -moz-transition: all .5s ease; 
-    -o-transition: all .5s ease; 
-    -ms-transition: all .5s ease; 
-    transition: all .5s ease;
-}
-#map-decp:hover{
-	bottom: 0;
-}
-#map-decp h4{
-	font-family: 'Oswald';
-	color: #518231;
-	margin-left: 10px;
-}
-#map-decp #text-2 .textwidget{
-	font-family: 'Open Sans';
-	margin-left: 15px;
-	color: #265C03;
-} 
 .lyd-page{
 	height: 100%;
 	width: 100%;
@@ -226,6 +63,11 @@ Version: v1.0
 	position: relative;
 	border-bottom: 5px solid #518231;
 
+}
+#lyd-learn-more.lyd-page-reg,
+#lyd-Contact.lyd-page-reg{
+	height: 430px;
+	border-bottom: 5px solid #518231;
 }
 .admin-bar .content-wrapper{
 	top: -30px;
@@ -255,95 +97,35 @@ p{
 .page-padding p{
 	font-family: 'Open Sans';
 }
-footer{
-	border-top: 5px solid #518231;
-	background: #997859;
-	/*background-image: url('img/lines3.svg');*/
-
-	height: 95px;
-	padding: 0;
-	margin: 0;
+.page-padding h1{
+	font-size: 54px;
+	font-family: 'webfontregular';
+}
+.lyd-page-reg{
+	height: 650px;
+	width: 100%;
+	background-size: cover;
+	background-position: center 30%;
+}
+.home .non-frontpage{
+	display: none;
+}
+#hero-btn-container{
+	height: 100%;
+	width: 100%;
 	position: relative;
-	z-index: 9999;
 }
-footer div:last-of-type{
-	text-align: center;
+.section-container{
+	position: absolute;
+	top: 0; bottom: 0;
+	left: 0; right: 0;
+	margin: auto;
+	height: 300px;
+	width: 400px;
+	background: #7F9D6C;
+	padding: 20px 10px 10px 10px;
 }
-footer h4{
-	height: 100%;
-	font-family: 'webfontregular';
-	color: #fff;
-	line-height: 90px;
-	margin: 0;
-}
-footer h4 a{
-	color: #ccc;
-	text-decoration: underline;
-	-webkit-transition: all .25s ease; 
-    -moz-transition: all .25s ease; 
-    -o-transition: all .25s ease; 
-    -ms-transition: all .25s ease; 
-    transition: all .25s ease;
-
-}
-footer h4 a:hover{
-	color: #fff;
-	text-decoration: underline;
-}
-footer h5{
-	font-size: 20px;
-	margin: 10px 0 5px 0;
-	font-family: 'webfontregular';
-	color: #fff;
-	float: left;
-	width: 30%;
-	height: 100%;
-	line-height: 70px;
-
-}
-footer h5 a{
-	color: #ccc;
-}
-footer h5 a:hover{
-	color: #fff;
-}
-#learn-more + footer{
-	margin-top: -20px !important;
-}
-footer ul{
-	width: 70%;
-	margin: 0;
-	padding: 0;
-	float: right;
-	height: 90px;
-}
-footer ul li{
-	display: inline-block;
-	height: 80px;
-	line-height: 90px;
-	list-style: outside none none;
-	padding: 0 5px;
-	-webkit-transition: all .25s ease; 
-    -moz-transition: all .25s ease; 
-    -o-transition: all .25s ease; 
-    -ms-transition: all .25s ease; 
-    transition: all .25s ease;
-}
-footer ul li:last-of-type{
-	margin-bottom: 10px;
-}
-footer a{
-	text-transform: capitalize;
-
-}
-footer ul li a{
-	color: #ccc;
-	font-family: 'Open Sans';
-}
-footer ul li a:hover{
-	color: #fff;
-	text-decoration: underline;
-}
+/*******************  1.0 - Navbar / Hero *******************/
 .lyd-btn{
 	padding: 10px 16px;
 	width: 150px;
@@ -355,11 +137,6 @@ footer ul li a:hover{
 	font-family: 'Open Sans';
 	-webkit-transition: all .15s;
 	transition: all .15s;
-}
-
-.page-padding h1{
-	font-size: 54px;
-	font-family: 'webfontregular';
 }
 .page-padding .lyd-btn{
 	margin-top: 20px;
@@ -378,123 +155,6 @@ footer ul li a:hover{
 .lyd-btn a:hover{
 	text-decoration: none;
 }
-.footer-nav-bo{
-	height: 300px;
-	overflow: hidden;
-	cursor: pointer;
-}
-.tt{
-	width: 33.3333%;
-	position: relative;
-	float: left;
-
-}
-.nav-bg-img{
-	background-size: cover;
-	background-position: center;
-	position: absolute;
-	height: 300px;
-	width: 100%;	
-	opacity: .9;
-	-webkit-transition: all .75s ease; 
-    -moz-transition: all .75s ease; 
-    -o-transition: all .75s ease; 
-    -ms-transition: all .75s ease; 
-    transition: all .75s ease;
-
-    transform: scale(1, 1);
-}
-.footer-nav-bo:hover .nav-bg-img{
-	opacity: 1;
-
-    -webkit-transform:scale(1.25); 
-    -moz-transform:scale(1.25);
-    -ms-transform:scale(1.25); 
-    -o-transform:scale(1.25); 
-     transform:scale(1.25);	
-}
-.footer-nav{
-	height: 300px;
-	border-top: 5px solid #518231;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-
-
-}
-.footer-nav-bg{
-	height: 300px;
-	background-size: cover;
-	background-position: center;
-
-/*    -webkit-transition: all 1s ease; 
-    -moz-transition: all 1s ease; 
-    -o-transition: all 1s ease; 
-    -ms-transition: all 1s ease; 
-    transition: all 1s ease;*/
-        max-width: 100%;
-}
-
-.footer-nav-bg:hover{
-/*    -webkit-transform:scale(1.25); 
-    -moz-transform:scale(1.25);
-    -ms-transform:scale(1.25); 
-    -o-transform:scale(1.25); 
-     transform:scale(1.25);*/
-}
-.footer-nav-bg:hover .footer-nav-container{
-/*	-webkit-transform:scale(.81); 
-    -moz-transform:scale(.81); 
-    -ms-transform:scale(.81); 
-    -o-transform:scale(.81); 
-     transform:scale(.81);*/
-}
-.footer-nav-container{
-	border: 3px solid #fff;
-	border-radius: 3px;
-	height: 250px;
-	margin: auto;
-	position: absolute;
-	width: 90%;
-	bottom: 0;
-	top: 0;
-	right: 0;
-	left: 0;
-	text-align: center;
-	font-family: 'webfontregular';
-
-/*	-webkit-transition: all 1s ease; 
-    -moz-transition: all 1s ease; 
-    -o-transition: all 1s ease; 
-    -ms-transition: all 1s ease; 
-    transition: all 1s ease;*/
-        max-width: 100%;
-}
-a .footer-nav-container {
-	line-height: 250px;
-	color: #eee;
-	text-transform: capitalize;
-	font-size: 25px;
-}
-/*.footer-nav div a{
-	font-size: 20px;
-	color: #fff;
-	text-transform: capitalize;
-}*/
-/*.footer-nav-bg:hover{
-	transition: background .2s;
-
-	transform: scale(1.1);
-}*/
-#nav-about{
-	background-image: url('img/campsite-img-sm.jpg');
-}
-#nav-gh{
-	background-image: url('img/getting-here-sm.jpg');
-}
-#nav-contact{
-	background-image: url('img/contact-sm.jpg');
-}
 .hero-border{
 	border: 3px solid #fff;
 	border-radius: 3px;
@@ -503,77 +163,6 @@ a .footer-nav-container {
 	left: 0; right: 0;
 	margin: auto;
 }
-
-.lyd-page-reg{
-	height: 650px;
-	width: 100%;
-	background-size: cover;
-	background-position: center 30%;
-}
-/*.lyd-page-reg h1{
-	margin: 0;
-	color: #fff;
-	text-align: center;
-	line-height: 220px;
-	font-size: 65px;
-}*/
-.lyd-photo{
-	height: 200px;
-	width: 30%;
-	list-style: none;
-	display: inline-block;
-	padding: 10px;
-	position: relative;
-	overflow: hidden;
-	cursor: pointer;
-
-}
-#lyd-photos{
-	width: 100%;
-	background: #7f9d6c;
-	height: 100%;
-	text-align: center;
-	margin: 0;
-	padding: 0;
-	box-shadow: 0 1px 3px #333;
-
-}
-.pg-txt{
-	background: rgba(0,0,0,0.6);
-	height: 91.5%;
-	line-height: 185px;
-	position: absolute;
-	top: -200px;
-	width: 91.5%;
-	color: #fff;
-	-webkit-transition: all .3s ease; 
-    -moz-transition: all .3s ease; 
-    -o-transition: all .3s ease; 
-    -ms-transition: all .3s ease; 
-    transition: all .3s ease;
-
-}
-.lyd-photo:hover .pg-txt{
-	top: 10px;
-}
-.picture-padding{
-	background-size: cover;
-	background-position: center;
-	height: 100%;
-	width: 100%;
-}
-.home .non-frontpage{
-	display: none;
-}
-.home .non-frontpage{
-	display: none;
-}
-#hero-btn-container{
-	height: 100%;
-	width: 100%;
-	position: relative;
-}
-
 .home .navbar-toggle{
 	top: 23px;
 	left: 17px;
@@ -646,11 +235,152 @@ a .footer-nav-container {
 	color: #fff;
 	text-decoration: underline;
 }
-.lyd-camp-page{
-	height: 550px;
+/*******************  2.0 - Learn More *******************/
+.about-title{
+	color: #518231;
+	font-family: 'Oswald';
+	margin: 0 0 10px;
+	padding-top: 20px;
+}
+.page-template-page-templatespage-about-php main{
 	background-image: url('img/lines.svg');
-	background-color: #518231;
+	background-color: #518231
+}
+#about-page-content{
+	width: 100%;
+	/*height: 500px; */
+	margin-top: -75px;
+	position: relative;
+}
+#about-page-content a img{
+	float: right;
+	/*margin: 10px 0 10px 10px;*/
+	padding: 10px;
+}
+#about-page-content p{
+	font-family: 'Open Sans';
+	color: #265C03;
+}
+#about-page-content #page-container{
+	width: 1020px;
+	border-top: 5px solid #518231;
+	padding-bottom: 5px;
+	/*background-image: url('img/lines2.svg');*/
+
+	background-color: #F4FFED;
+	box-shadow: 1px 2px 1px #333, -1px 2px 1px #333;
+	/*height: 500px;*/
+	margin: 0 auto;
+	position: relative;
+	z-index: 999;
+}
+#about-page-content #page-container #page-content{
+	width: 960px;
+	/*height: 500px;*/
+	margin: 0 auto;
+}
+#learn-more #page-content > div{
+	min-height: 420px;
+}
+#learn-more + footer > div{
+	/*margin-top: -70px;*/
+}
+
+#learn-more .box-shadow{
+	height: 89.9%
+}
+#learn-more + footer{
+	margin-top: -20px !important;
+}
+/*******************  3.0 - Getting Hear *******************/
+#getting-container .col-md-4 ul{
+	background: none repeat scroll 0 0 #7f9d6c;
+	box-shadow: 0 1px 3px #333;
+}
+#getting-container .col-md-8{
+	margin-bottom: 50px;
+}
+#getting-container .col-md-4 .textwidget > li {
+  font-family: 'Open Sans';
+  list-style: outside none none;
+  padding: 5px;
+  color: #fff;
+}
+#getting-container .col-md-4{
+	margin: 0;
+}
+#getting-container h1{
+	color: #518231;
+	font-family: 'Oswald';
+}
+#getting-container ul{
+	padding: 0;
+	margin: 0;
+}
+#lyd-getting-here h1{
+	line-height: 265px; 
+}
+#getting-container{
+	background-image: url("img/lines.svg");
+	background-repeat: repeat;
+	border-top: 5px solid #518231;
 	box-shadow: 0 0 5px #333 inset;
+
+}
+#lyd-map{
+	height: 100%;
+	width: 100%;
+}
+#map-container{
+	height: 400px;
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+	border: 1px solid #fff;
+	overflow: hidden;
+
+}
+#map-decp{
+	position: absolute;
+	/*bottom: -115px;*/
+	bottom: -65px;
+	right: 0;
+	height: 100px;
+	width: 300px;
+	/*background-color: #7f9d6c;*/
+	border-radius: 3px;
+	background-image: url('img/lines.svg');
+	cursor: pointer;
+	box-shadow: 0 1px 3px #333;
+	-webkit-transition: all .5s ease; 
+    -moz-transition: all .5s ease; 
+    -o-transition: all .5s ease; 
+    -ms-transition: all .5s ease; 
+    transition: all .5s ease;
+}
+#map-decp:hover{
+	bottom: 0;
+}
+#map-decp h4{
+	font-family: 'Oswald';
+	color: #518231;
+	margin-left: 10px;
+}
+#map-decp #text-2 .textwidget{
+	font-family: 'Open Sans';
+	margin-left: 15px;
+	color: #265C03;
+} 
+/*******************  4.0 - Contact *******************/
+#Contact form h3{
+	text-align: center;
+}
+#Contact form p img{
+	text-align: center;
+	margin-bottom: 10px;
+}
+#Contact .box-shadow{
+	height: 87.5%;
 }
 #Contact{
 	background-image: url('img/lines.svg');
@@ -659,21 +389,24 @@ a .footer-nav-container {
 .lyd-nav #contact-us{
 	background: transparent;
 }
+/*******************  5.0 - Reserve Section *******************/
+#camp-map div{
+	height: 500px;
+	width: 95%;
+	background-color: #033;
+	margin: 25px auto;
+}
+.lyd-camp-page{
+	height: 550px;
+	background-image: url('img/lines.svg');
+	background-color: #518231;
+	box-shadow: 0 0 5px #333 inset;
+}
 .lyd-camp-page .row{
 	position: relative;
 }
 #camp-reserve{
 	height: 550px;
-}
-.section-container{
-	position: absolute;
-	top: 0; bottom: 0;
-	left: 0; right: 0;
-	margin: auto;
-	height: 300px;
-	width: 400px;
-	background: #7F9D6C;
-	padding: 20px 10px 10px 10px;
 }
 .campsite{
 	font-family: 'Ubuntu';
@@ -714,6 +447,273 @@ a .footer-nav-container {
 	float: right;
 
 }
+.reserve-btn-2{
+	padding: 5px 10px;
+	background-color: #617e4e;
+	border-radius: 3px;
+	width: 30%;
+	margin: 0 auto;
+	cursor: pointer;
+	text-align: center;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+	box-shadow: 0 1px 3px #333;
+	color: #ccc;
+
+}
+.reserve-btn-2:hover{
+	box-shadow: 0 1px 3px #333 inset;
+	color: #fff;
+
+}
+.camp-ip-grp{
+	margin-bottom: 10px;
+	text-align: center;
+}
+#camp-number{
+	margin-top: 10px;
+}
+/*******************  6.0 - Photo Gallery *******************/
+.lyd-modal-img{
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+}
+.modal-body{
+	height: 500px;
+	width: 100%;
+
+}
+.lyd-photo{
+	height: 200px;
+	width: 30%;
+	list-style: none;
+	display: inline-block;
+	margin: 10px;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+
+}
+#lyd-photos{
+	width: 100%;
+	background: #7f9d6c;
+	height: 100%;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	box-shadow: 0 1px 3px #333;
+
+}
+.pg-txt{
+	background: rgba(0,0,0,0.6);
+	height: 200px;
+	line-height: 185px;
+	position: absolute;
+	top: -200px;
+	width: 100%;
+	color: #fff;
+	-webkit-transition: all .3s ease; 
+    -moz-transition: all .3s ease; 
+    -o-transition: all .3s ease; 
+    -ms-transition: all .3s ease; 
+    transition: all .3s ease;
+
+}
+.lyd-photo:hover .pg-txt{
+	top: 0px;
+}
+.picture-padding{
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+	width: 100%;
+}
+/*******************  7.0 - Nav-Footer *******************/
+#nav-about{
+	background-image: url('img/campsite-img-sm.jpg');
+}
+#nav-gh{
+	background-image: url('img/contact-sm.jpg');
+}
+#nav-contact{
+	background-image: url('img/getting-here-sm.jpg');
+
+}
+.footer-nav-bo{
+	height: 300px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.tt{
+	width: 33.3333%;
+	position: relative;
+	float: left;
+
+}
+.nav-bg-img{
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	height: 300px;
+	width: 100%;	
+	opacity: .9;
+	-webkit-transition: all .75s ease; 
+    -moz-transition: all .75s ease; 
+    -o-transition: all .75s ease; 
+    -ms-transition: all .75s ease; 
+    transition: all .75s ease;
+
+    transform: scale(1, 1);
+}
+.footer-nav-bo:hover .nav-bg-img{
+	opacity: 1;
+
+    -webkit-transform:scale(1.25); 
+    -moz-transform:scale(1.25);
+    -ms-transform:scale(1.25); 
+    -o-transform:scale(1.25); 
+     transform:scale(1.25);	
+}
+.footer-nav{
+	height: 300px;
+	border-top: 5px solid #518231;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.footer-nav-bg{
+	height: 300px;
+	background-size: cover;
+	background-position: center;
+    max-width: 100%;
+}
+.footer-nav-container{
+	border: 3px solid #fff;
+	border-radius: 3px;
+	height: 250px;
+	margin: auto;
+	position: absolute;
+	width: 90%;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	left: 0;
+	text-align: center;
+	font-family: 'webfontregular';
+    max-width: 100%;
+}
+a .footer-nav-container {
+	line-height: 250px;
+	color: #eee;
+	text-transform: capitalize;
+	font-size: 25px;
+}
+.footer-nav .col-md-4{
+	padding: 0;
+}
+/*******************  8.0 - Footer *******************/
+footer{
+	border-top: 5px solid #518231;
+	background: #997859;
+	height: 95px;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	z-index: 9999;
+}
+footer div:last-of-type{
+	text-align: center;
+}
+footer h4{
+	height: 100%;
+	font-family: 'webfontregular';
+	color: #fff;
+	line-height: 90px;
+	margin: 0;
+}
+footer h4 a{
+	color: #ccc;
+	-webkit-transition: all .25s ease; 
+    -moz-transition: all .25s ease; 
+    -o-transition: all .25s ease; 
+    -ms-transition: all .25s ease; 
+    transition: all .25s ease;
+
+}
+footer h4 a:hover{
+	color: #fff;
+	text-decoration: underline;
+}
+footer h5{
+	font-size: 20px;
+	margin: 10px 0 5px 0;
+	font-family: 'webfontregular';
+	color: #fff;
+	float: left;
+	width: 30%;
+	height: 100%;
+	line-height: 70px;
+
+}
+footer h5 a{
+	color: #ccc;
+}
+footer h5 a:hover{
+	color: #fff;
+}
+footer ul{
+	width: 70%;
+	margin: 0;
+	padding: 0;
+	float: right;
+	height: 90px;
+}
+footer ul li{
+	display: inline-block;
+	height: 80px;
+	line-height: 90px;
+	list-style: outside none none;
+	padding: 0 5px;
+	-webkit-transition: all .25s ease; 
+    -moz-transition: all .25s ease; 
+    -o-transition: all .25s ease; 
+    -ms-transition: all .25s ease; 
+    transition: all .25s ease;
+}
+footer ul li:last-of-type{
+	margin-bottom: 10px;
+}
+footer a{
+	text-transform: capitalize;
+
+}
+footer ul li a{
+	color: #ccc;
+	font-family: 'Open Sans';
+}
+footer ul li a:hover{
+	color: #fff;
+	text-decoration: underline;
+}
+#real-footer-l{
+	width: 60%;
+	float: left;
+}
+#real-footer-l h5{
+	padding-left: 20px;
+
+}
+#real-footer-l ul{
+	/*margin-left: -20px;*/
+}
+#real-footer-r{
+	width: 40%;
+	float: left;
+}
+
+/*******************  9.0 - Inputs *******************/
 .contact-page > div.wpcf7{
 	margin: 0 auto;
 	width: 600px;
@@ -727,12 +727,7 @@ a .footer-nav-container {
 	border-width: 1px;
 	border-radius: 3px;
 	border-color: #ccc;
-	/*display: block;*/
-	/*line-height: 18px;*/
-	/*margin: 0 0 18px;*/
 	padding: 8px 8px 7px;
-	/*width: 50%;*/
-	/*margin: 0 auto;*/
 	-webkit-transition: all .25s;
 	transition: all .25s;
 }
@@ -804,50 +799,7 @@ a .footer-nav-container {
 #about-page-content :-ms-input-placeholder {
 	color: #337E03;
 }
-
-.reserve-btn-2{
-	padding: 5px 10px;
-	background-color: #617e4e;
-	border-radius: 3px;
-	width: 30%;
-	margin: 15px auto 0 auto;
-	cursor: pointer;
-	text-align: center;
-	-webkit-transition: all .5s;
-	transition: all .5s;
-	box-shadow: 0 1px 3px #333;
-	color: #ccc;
-
-}
-.reserve-btn-2:hover{
-	box-shadow: 0 1px 3px #333 inset;
-	color: #fff;
-
-}
-.camp-ip-grp{
-	margin-bottom: 10px;
-}
-#camp-number{
-	margin-top: 10px;
-}
-.footer-nav .col-md-4{
-	padding: 0;
-}
-#real-footer-l{
-	width: 60%;
-	float: left;
-}
-#real-footer-l h5{
-	padding-left: 20px;
-
-}
-#real-footer-l ul{
-	/*margin-left: -20px;*/
-}
-#real-footer-r{
-	width: 40%;
-	float: left;
-}
+/*******************  10.0 - Media Queries *******************/
 
 @media all and (max-width: 1024px){
 
@@ -881,6 +833,12 @@ a .footer-nav-container {
 }
 @media all and (max-width: 1105px){
 	
+}
+
+@media all and (max-width: 1020px){
+	#about-page-content #page-container{
+		width: 100%;
+	}
 }
 @media all and (max-width: 980px){
 	#footer .col-md-7{

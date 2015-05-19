@@ -1,5 +1,5 @@
 <?php
- // Template Name: lyd-about
+ // Template Name: Learn More
 create_hero_reg('Learn More');
 
 

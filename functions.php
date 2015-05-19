@@ -1,7 +1,6 @@
 <?php
  require get_template_directory() . '/inc/templatetags.php';
  require get_template_directory() . '/inc/campsite-map.php';
- require get_template_directory() . '/wid/weather-widget.php';
 
 /**
  * myTheme setup.
@@ -23,25 +22,6 @@ function myTheme_setup(){
 
 }
 add_action( 'after_setup_theme', 'myTheme_setup' );
-/**
- * Register Lato Google font 
- *
- * @since myTheme
- *
- * @return string
- */
-// function myTheme_font_url() {
-// 	$font_url = '';
-// 	/*
-// 	 * Translators: If there are characters in your language that are not supported
-// 	 * by Lato, translate this to 'off'. Do not translate into your own language.
-// 	 */
-// 	if ( 'off' !== _x( 'on', 'Lato font: on or off', 'myTheme' ) ) {
-// 		$font_url = add_query_arg( 'family', urlencode( 'Lato:300,400,700,900,300italic,400italic,700italic' ), "//fonts.googleapis.com/css" );
-// 	}
-
-// 	return $font_url;
-// }
 
 /**
  * Enqueue scripts and styles for the front end.
@@ -55,6 +35,9 @@ function lyd_scripts() {
 	// Load main stylesheet.
 	wp_enqueue_style( 'lyd-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css');
 	wp_enqueue_style( 'lyd-font', get_template_directory_uri() . '/fonts/stylesheet.css');
+	
+	wp_enqueue_style( 'lyd-datepicker-style', '//code.jquery.com/ui/1.11.4/themes/south-street/jquery-ui.css');
+
 	wp_enqueue_style( 'lyd-style', get_stylesheet_uri());
 	wp_register_script( 'lyd-google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAVm7hyYs5C5uxQGrw4t3McmRGLB_F8xpg', '20131209', true );
 	// wp_register_script( 'lyd-google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBNPtsjyF7lfCcv-p0epQ1w9k2NtXCUEu0', '20131209', true );
@@ -98,6 +81,15 @@ function lyd_widgets_init() {
 		'description' => 'Text for places near by',
 		'before_widget' => '<ul id="%1$s" class="widget %2$s">',
 		'after_widget' => '</ul>',
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h1>'
+	) );
+	register_sidebar( array (
+		'name' => 'Reserve A Spot From',
+		'id'   => 'sidebar-3',
+		'description' => 'Place Contact From 7 short code here',
+		'before_widget' => '<div id="campsite-book" class="widget %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '<h1 class="widget-title">',
 		'after_title' => '</h1>'
 	) );
