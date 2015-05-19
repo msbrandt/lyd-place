@@ -473,6 +473,10 @@ p{
 #camp-number{
 	margin-top: 10px;
 }
+#text-4 > .textwidget{
+	margin-left: 10px;
+	color: #518231;
+}
 /*******************  6.0 - Photo Gallery *******************/
 .lyd-modal-img{
 	height: 100%;
